@@ -292,37 +292,6 @@
       gap: 10px;
     }
 
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .metric {
-      min-height: 96px;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-    }
-
-    .metric strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--green);
-      font-size: 26px;
-      line-height: 1;
-    }
-
-    .metric span {
-      display: block;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 1.35;
-    }
-
     .section {
       padding: 42px 0 0;
       scroll-margin-top: 90px;
@@ -591,7 +560,6 @@
         padding: 18px;
       }
 
-      .metrics,
       .project-grid,
       .skills-grid,
       .service-grid {
@@ -680,12 +648,6 @@
           <a class="btn primary" href="#projects">See projects</a>
           <a class="btn" href="#publications">Read publications</a>
           <a class="btn" href="assets/resume.pdf">Download resume</a>
-        </div>
-        <div class="metrics" aria-label="Profile highlights">
-          <div class="metric"><strong>3</strong><span>research papers across AAAI and ICVGIP</span></div>
-          <div class="metric"><strong>0.5%</strong><span>hallucination rate in DocVault RAG evals</span></div>
-          <div class="metric"><strong>97.58%</strong><span>TB bacilli classifier accuracy</span></div>
-          <div class="metric"><strong>0.818</strong><span>R2 for satellite-driven valuation</span></div>
         </div>
       </section>
 
@@ -789,13 +751,6 @@
           </article>
 
           <article class="project-card">
-            <div class="card-label">Medical imaging</div>
-            <h3 class="title">Deep Learning for Acid-Fast Bacilli Detection</h3>
-            <p class="body-copy">TB bacilli classifier using an autoencoder reconstruction-loss weighted six-channel input - lighting, saturation, hue, and Sobel edge maps - with channel attention and false-positive focal loss.</p>
-            <div class="tag-row"><span class="tag">97.58% accuracy</span><span class="tag">Morphology fusion</span><span class="tag">Grad-CAM</span></div>
-          </article>
-
-          <article class="project-card">
             <div class="card-label">Remote sensing</div>
             <h3 class="title">Satellite-Driven Real Estate Valuation</h3>
             <p class="body-copy">Multimodal price-prediction system fusing satellite imagery through EfficientNet-V2-S, FPN-Lite, and CBAM with tabular features through an MLP, then combining both streams with late fusion.</p>
@@ -845,10 +800,6 @@
           <article class="edu-card">
             <h3 class="title">Indian Institute of Technology, Roorkee</h3>
             <p>B.Tech. in Biosciences and Bioengineering, CGPA 8.27. Coursework and projects bridge biological systems, computer vision, and production ML engineering.</p>
-          </article>
-          <article class="edu-card">
-            <h3 class="title">Schooling</h3>
-            <p>Heera Lal Public School, Delhi: Class XII 93.20%. Delhi Public School, Sector 30, Noida: Class X 96.80%.</p>
           </article>
         </div>
       </section>
