@@ -3,287 +3,89 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Yash Bansal — AI Engineer &amp; Researcher</title>
-<meta name="description" content="Yash Bansal — AI Engineer and ML Researcher at IIT Roorkee. Expert in Agentic LLM systems, RAG pipelines, and Multimodal Deep Learning. Published at AAAI 2026 and ICVGIP 2025."/>
-<meta name="keywords" content="Yash Bansal, AI Engineer, ML Researcher, IIT Roorkee, LLM Agents, RAG, Multimodal Deep Learning, Computer Vision, AAAI, ICVGIP"/>
-<meta name="author" content="Yash Bansal"/>
-<meta property="og:title" content="Yash Bansal — AI Engineer &amp; Researcher"/>
-<meta property="og:description" content="Building production-grade agentic LLM systems and multimodal models at IIT Roorkee."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://oyaah.github.io/"/>
+<title>Yash Bansal | AI Engineer & Researcher</title>
+<meta name="description" content="AI Engineer & Researcher at IIT Roorkee. Building agentic LLM systems, RAG pipelines, and Multimodal Deep Learning models. Published at AAAI & ICVGIP."/>
+<meta name="keywords" content="Yash Bansal, AI Engineer, ML Researcher, IIT Roorkee, LLM, RAG, Multimodal AI, Computer Vision"/>
+<meta property="og:title" content="Yash Bansal | AI Engineer & Researcher"/>
+<meta property="og:description" content="AI Engineer & Researcher at IIT Roorkee. Building agentic LLM systems, RAG pipelines, and Multimodal Deep Learning models."/>
+<meta property="og:site_name" content="Yash Bansal Portfolio"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
 <script>
 (function(){try{var s=localStorage.getItem("theme");var t=(s==="light"||s==="dark")?s:(window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--bg:#ffffff;--surface:#ffffff;--s2:#f9fafb;--text:#111827;--muted:#6b7280;--ink:#374151;--a:#111827;--ahi:#2563eb;--border:#e5e7eb;--rule:#e5e7eb;--line:rgba(0,0,0,.05);--ls:rgba(0,0,0,.08);--stripe:#f9fafb;--hbg:rgba(255,255,255,.85);--sb:#d1d5db;--dots:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23e5e7eb'/%3E%3C/svg%3E");--sans:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
-:root[data-theme="dark"]{color-scheme:dark;--bg:#0a0a0a;--surface:#111111;--s2:#171717;--text:#f3f4f6;--muted:#9ca3af;--ink:#d1d5db;--a:#f3f4f6;--ahi:#60a5fa;--border:#262626;--rule:#262626;--line:rgba(255,255,255,.05);--ls:rgba(255,255,255,.1);--stripe:#171717;--hbg:rgba(10,10,10,.85);--sb:#333333;--dots:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23262626'/%3E%3C/svg%3E")}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s}
-a{color:var(--ahi);text-decoration:none;transition:border-color .15s,color .15s}
-a:hover{color:var(--ahi);opacity:0.8}
-.container{max-width:1100px;margin:0 auto;padding:0 32px}
-.page-layout{display:grid;grid-template-columns:minmax(300px,360px) minmax(0,1fr);gap:48px;padding:40px 0 80px;align-items:start}
-.sidebar{display:flex;flex-direction:column;gap:24px}
-.content{display:flex;flex-direction:column;gap:40px}
-.section{scroll-margin-top:80px}
-/* HEADER */
-.site-header{position:sticky;top:0;z-index:100;background:var(--hbg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-name{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--text);letter-spacing:.05em;text-transform:lowercase}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
-.nav-link{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--muted);text-decoration:none;transition:color .15s;text-transform:uppercase}
-.nav-link:hover,.nav-link.active{color:var(--text)}
-.tt{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--muted);cursor:pointer;transition:all .15s}
-.tt:hover{color:var(--text);border-color:var(--muted)}
-.tt svg{width:16px;height:16px}
-.i-sun{display:none}
-:root[data-theme="dark"] .i-sun{display:block}
-:root[data-theme="dark"] .i-moon{display:none}
-.nt{display:none;border:none;background:transparent;font-size:20px;cursor:pointer;color:var(--text)}
-/* PROFILE */
-.avatar{width:96px;height:96px;border-radius:24px;background:linear-gradient(135deg,#2563eb,#6366f1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 10px 15px -3px rgba(37,99,235,0.2)}
-.avatar span{font-family:var(--mono);font-size:28px;font-weight:600;color:#fff}
-.hero-title{font-size:32px;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin-bottom:4px}
-.hero-sub{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.05em;margin-bottom:16px}
-.srow{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.si{color:var(--muted);transition:color .15s}
-.si:hover{color:var(--text)}
-.si svg{width:20px;height:20px}
-.bio{font-size:14px;color:var(--ink);line-height:1.7}
-.bio p{margin-bottom:12px}
-/* PANELS */
-.panel-h{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.panel-h::after{content:"";height:1px;flex:1;background:var(--rule)}
-/* FACTS */
-.facts{font-family:var(--mono);font-size:11px;margin-bottom:24px}
-.fact{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line)}
-.fact:last-child{border-bottom:none}
-.fact dt{color:var(--muted);text-transform:lowercase}
-.fact dd{color:var(--text);font-weight:500}
-/* PUBS & PROJECTS */
-.pub-list{display:flex;flex-direction:column;gap:32px}
-.pc{display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:start}
-.pt{display:block;border-radius:8px;overflow:hidden;border:1px solid var(--border);transition:transform .2s,border-color .2s;background:var(--s2)}
-.pt:hover{transform:translateY(-2px);border-color:var(--ahi)}
-.pt img{width:100%;height:auto;display:block}
-.ptitle{font-size:16px;font-weight:600;line-height:1.4;color:var(--text);margin-bottom:6px}
-.pmeta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:8px}
-.pvenue{font-weight:600;color:var(--text)}
-.pacts{display:flex;gap:12px}
-.btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;font-weight:600;padding:6px 12px;border:1px solid var(--border);border-radius:6px;color:var(--text);background:var(--bg);transition:all .15s}
-.btn:hover{background:var(--s2);border-color:var(--muted)}
-.btn svg{width:14px;height:14px}
-/* SKILLS */
-.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.sg h4{font-family:var(--mono);font-size:10px;font-weight:600;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.stags{display:flex;flex-wrap:wrap;gap:6px}
-.stag{font-family:var(--mono);font-size:10px;color:var(--text);background:var(--s2);border:1px solid var(--border);padding:4px 8px;border-radius:4px}
-/* EXP */
-.ei{margin-bottom:24px}
-.erole{font-size:15px;font-weight:600;color:var(--text)}
-.eorg{font-family:var(--mono);font-size:12px;color:var(--ahi);margin-bottom:4px}
-.emeta{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:8px}
-.edesc{font-size:13px;color:var(--ink);line-height:1.6}
-/* FOOTER */
-.site-footer{border-top:1px solid var(--rule);padding:40px 0;margin-top:40px}
-.fi{display:flex;justify-content:space-between;align-items:center}
-.fi p{font-family:var(--mono);font-size:11px;color:var(--muted)}
-/* RESPONSIVE */
-@media(max-width:900px){.page-layout{grid-template-columns:1fr;gap:40px}.pc{grid-template-columns:120px 1fr;gap:16px}}
-@media(max-width:600px){.pc{grid-template-columns:1fr}.nav-links{display:none}.nt{display:block}}
+:root{--bg:#ffffff;--text:#111;--accent:#2563eb;--muted:#666;--card:#f9f9f9;--border:#eee}
+:root[data-theme="dark"]{--bg:#050505;--text:#f0f0f0;--accent:#60a5fa;--muted:#999;--card:#111;--border:#222}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;margin:0;line-height:1.5}
+.container{max-width:900px;margin:0 auto;padding:40px 20px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:60px}
+.name{font-weight:700;font-size:24px}
+.nav{display:flex;gap:20px}
+.nav a{color:var(--muted);text-decoration:none;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--border);padding:24px;border-radius:16px}
+.card h3{margin-top:0;font-size:18px}
+.card p{font-size:14px;color:var(--muted)}
+.btn{display:inline-block;padding:8px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600}
 </style>
 </head>
 <body>
+<div class="container">
+  <header>
+    <div class="name">Yash Bansal</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
 
-<header class="site-header">
-  <nav class="container nav">
-    <a href="#" class="nav-name">yash_bansal</a>
-    <div class="nav-right">
-      <ul class="nav-links" id="pnav">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#publications" class="nav-link">Research</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-      </ul>
-      <a href="assets/resume.pdf" class="btn" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Resume
-      </a>
-      <button class="tt" aria-label="Toggle theme">
-        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-      <button class="nt" aria-label="Menu">&#9776;</button>
-    </div>
-  </nav>
-</header>
-
-<main class="container page-layout">
-<aside class="sidebar">
-
-  <section id="about" class="section">
-    <div class="avatar"><span>YB</span></div>
-    <h1 class="hero-title">Yash Bansal</h1>
-    <p class="hero-sub">AI Engineer &middot; ML Researcher</p>
-    
-    <div class="srow">
-      <a href="https://github.com/oyaah" target="_blank" class="si" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
-      <a href="https://www.linkedin.com/in/yash-bansal-b506bb302/" target="_blank" class="si" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-      <a href="mailto:yash_b@bt.iitr.ac.in" class="si" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
-    </div>
-
-    <div class="bio">
-      <p>AI Engineer and Researcher at <strong>IIT Roorkee</strong>. I specialize in building production-grade agentic LLM systems, RAG pipelines, and multimodal deep learning models.</p>
-      <p>Published at <strong>AAAI 2026</strong> and <strong>ICVGIP 2025</strong>. Currently focused on advancing zero-shot vision reasoning and surgical video analysis.</p>
-    </div>
-
-    <dl class="facts">
-      <div class="fact"><dt>education</dt><dd>IIT Roorkee '27</dd></div>
-      <div class="fact"><dt>specialization</dt><dd>LLM Agents &middot; CV</dd></div>
-      <div class="fact"><dt>location</dt><dd>Roorkee, India</dd></div>
-    </dl>
+  <section id="about" style="margin-bottom:60px">
+    <h1>Building Agentic AI systems.</h1>
+    <p style="max-width:600px;font-size:18px">AI Engineer & Researcher at IIT Roorkee. Expert in Agentic LLM systems, RAG pipelines, and Multimodal Deep Learning. Published at AAAI 2026 & ICVGIP 2025.</p>
+    <a href="assets/resume.pdf" class="btn">View Resume</a>
   </section>
 
-  <section class="section">
-    <h3 class="panel-h">Core Stack</h3>
-    <div class="sgrid">
-      <div class="sg"><h4>Agents</h4><div class="stags"><span class="stag">LangGraph</span><span class="stag">CrewAI</span></div></div>
-      <div class="sg"><h4>Retrieval</h4><div class="stags"><span class="stag">Pinecone</span><span class="stag">Qdrant</span></div></div>
-      <div class="sg"><h4>Deep Learning</h4><div class="stags"><span class="stag">PyTorch</span><span class="stag">HuggingFace</span></div></div>
-      <div class="sg"><h4>Ops</h4><div class="stags"><span class="stag">Docker</span><span class="stag">FastAPI</span></div></div>
+  <section id="research" style="margin-bottom:60px">
+    <h2>Research</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>DLSG-CoT</h3>
+        <p>Zero-Shot Vision Language Reasoning via Dual-layer Scene Graph.</p>
+        <a href="https://drive.google.com/file/d/13Y9duvrOJT0ljtGZkvLk9eUoOgfj7-Ad/view" target="_blank" style="color:var(--accent)">Read Paper →</a>
+      </div>
+      <div class="card">
+        <h3>TWiST</h3>
+        <p>Temporal Weakly-Supervised Triplets Recognition in Surgical Videos.</p>
+        <a href="https://drive.google.com/file/d/1KkKK-LdBYvVaNfnttTkIDwdXNlZHZ_PK/view" target="_blank" style="color:var(--accent)">Read Paper →</a>
+      </div>
+      <div class="card">
+        <h3>MorphoChanNet</h3>
+        <p>Weighted ColorMorphology for TB Bacilli Detection.</p>
+        <a href="https://drive.google.com/file/d/1fDiYDcPjGdapSoGi3nkUm9RmteZjxBKi/view" target="_blank" style="color:var(--accent)">Read Paper →</a>
+      </div>
     </div>
   </section>
 
-</aside>
-
-<div class="content">
-
-  <section id="publications" class="section">
-    <h3 class="panel-h">Research &amp; Publications</h3>
-    <div class="pub-list">
-
-      <article class="pc">
-        <a class="pt" href="https://drive.google.com/file/d/13Y9duvrOJT0ljtGZkvLk9eUoOgfj7-Ad/view" target="_blank">
-          <img src="assets/images/dlsg.png" alt="DLSG-CoT Architecture">
-        </a>
-        <div class="pb">
-          <div class="ptitle">Zero-Shot Vision Language Reasoning via Dual-layer Scene Graph Chain of Thoughts</div>
-          <div class="pmeta">Yash Bansal et al. &middot; <span class="pvenue">AAAI 2026</span></div>
-          <div class="pacts">
-            <a class="btn" href="https://drive.google.com/file/d/13Y9duvrOJT0ljtGZkvLk9eUoOgfj7-Ad/view" target="_blank">Paper</a>
-            <span class="btn">Poster</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="pc">
-        <a class="pt" href="https://drive.google.com/file/d/1KkKK-LdBYvVaNfnttTkIDwdXNlZHZ_PK/view" target="_blank">
-          <img src="assets/images/twist.png" alt="TWiST Architecture">
-        </a>
-        <div class="pb">
-          <div class="ptitle">TWiST: Temporal Weakly-Supervised Triplets Recognition in Surgical Videos</div>
-          <div class="pmeta">Pranshu Danani, Yash Bansal et al. &middot; <span class="pvenue">AAAI 2026</span></div>
-          <div class="pacts">
-            <a class="btn" href="https://drive.google.com/file/d/1KkKK-LdBYvVaNfnttTkIDwdXNlZHZ_PK/view" target="_blank">Paper</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="pc">
-        <a class="pt" href="https://drive.google.com/file/d/1fDiYDcPjGdapSoGi3nkUm9RmteZjxBKi/view?usp=sharing" target="_blank">
-          <img src="assets/images/morphochannet.png" alt="MorphoChanNet Architecture">
-        </a>
-        <div class="pb">
-          <div class="ptitle">Weighted ColorMorphology Feature Fusion for TB Bacilli Detection</div>
-          <div class="pmeta">Yash Bansal et al. &middot; <span class="pvenue">ICVGIP 2025</span></div>
-          <div class="pacts">
-            <a class="btn" href="https://drive.google.com/file/d/1fDiYDcPjGdapSoGi3nkUm9RmteZjxBKi/view?usp=sharing" target="_blank">Paper</a>
-          </div>
-        </div>
-      </article>
-
+  <section id="projects">
+    <h2>Systems</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>DocVault</h3>
+        <p>Production RAG with NLI contradiction stripping & hybrid retrieval.</p>
+      </div>
+      <div class="card">
+        <h3>Research-Swarm</h3>
+        <p>Hierarchical multi-agent orchestration built with LangGraph.</p>
+      </div>
+      <div class="card">
+        <h3>Satellite Valuation</h3>
+        <p>Multimodal pipeline fusing satellite features with tabular data.</p>
+      </div>
     </div>
   </section>
-
-  <section id="projects" class="section">
-    <h3 class="panel-h">Selected Systems</h3>
-    <div class="pub-list">
-
-      <article class="pc">
-        <div class="pb">
-          <div class="ptitle">DocVault &mdash; Zero-Hallucination RAG</div>
-          <p class="edesc" style="margin-bottom:12px">Production RAG with NLI-based contradiction stripping, hybrid retrieval (Pinecone + BM25), and cross-encoder reranking. Achieved 0.995 faithfulness in document processing.</p>
-          <div class="stags">
-            <span class="stag">LangChain</span><span class="stag">DeBERTa-v3</span><span class="stag">Pinecone</span><span class="stag">Celery</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="pc">
-        <div class="pb">
-          <div class="ptitle">Research-Swarm &mdash; Multi-Agent Orchestration</div>
-          <p class="edesc" style="margin-bottom:12px">Hierarchical agent system (Planner, Researcher, Verifier, Writer) built with LangGraph. Features cost-aware model routing and RAGAS evaluation suite.</p>
-          <div class="stags">
-            <span class="stag">LangGraph</span><span class="stag">Qdrant</span><span class="stag">RAGAS</span><span class="stag">FastAPI</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="pc">
-        <div class="pb">
-          <div class="ptitle">Satellite Real Estate Valuation</div>
-          <p class="edesc" style="margin-bottom:12px">Multimodal pipeline fusing EfficientNet-V2 satellite features with tabular MLP for precise property valuation. Achieved R² = 0.8182 on diverse datasets.</p>
-          <div class="stags">
-            <span class="stag">EfficientNet</span><span class="stag">PyTorch</span><span class="stag">Multimodal</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section id="experience" class="section">
-    <h3 class="panel-h">Experience</h3>
-    <div class="ei">
-      <div class="erole">Machine Learning Intern</div>
-      <div class="eorg">Whyminds.ai</div>
-      <div class="emeta">Jun 2025 &ndash; Jul 2025 &middot; Remote</div>
-      <p class="edesc">Architected a multi-agentic pipeline using CrewAI for LinkedIn content automation. Developed document OCR systems using PaddleOCR and LayoutLMv3 for noisy financial forms.</p>
-    </div>
-    <div class="ei">
-      <div class="erole">Research Intern</div>
-      <div class="eorg">Parimal Labs</div>
-      <div class="emeta">2024 &ndash; 2025 &middot; Medical Imaging</div>
-      <p class="edesc">Developed MorphoChanNet for TB bacilli detection in cytopathology smears, achieving SOTA-level accuracy in feature fusion-based classification.</p>
-    </div>
-  </section>
-
 </div>
-</main>
-
-<footer class="site-footer container">
-  <div class="fi">
-    <p>&copy; <span id="yr"></span> Yash Bansal &middot; Built with passion at IIT Roorkee</p>
-    <div class="srow" style="margin:0">
-      <a href="https://github.com/oyaah" target="_blank" class="si"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
-    </div>
-  </div>
-</footer>
-
-<script>
-const tt=document.querySelector('.tt'),nt=document.querySelector('.nt'),pnav=document.getElementById('pnav');
-const applyT=t=>{document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t)};
-tt.addEventListener('click',()=>applyT(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'));
-nt.addEventListener('click',()=>pnav.style.display=pnav.style.display==='flex'?'none':'flex');
-document.getElementById('yr').textContent=new Date().getFullYear();
-// Active link highlighting
-const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-link');
-window.addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(pageYOffset>=s.offsetTop-100)cur=s.getAttribute('id')});nls.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+cur)})});
-</script>
 </body>
 </html>
