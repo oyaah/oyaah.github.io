@@ -7,11 +7,24 @@
   <meta name="description" content="Yash Bansal is an AI engineer and ML researcher at IIT Roorkee building agentic LLM systems, RAG pipelines, and multimodal deep learning systems across NLP, medical imaging, and remote sensing.">
   <meta name="author" content="Yash Bansal">
   <meta name="theme-color" content="#173b2f">
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var theme = savedTheme || (prefersDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
   <style>
     :root {
       --bg: #f7f8f4;
       --panel: #ffffff;
       --ink: #17201b;
+      --copy: #344039;
       --muted: #647069;
       --soft: #e5e9df;
       --line: #d7ded4;
@@ -19,7 +32,36 @@
       --blue: #2457a6;
       --rust: #9a4424;
       --gold: #b4841f;
+      --chip-bg: #eef4f1;
+      --profile-link-bg: #fbfcf8;
+      --thumb-bg: #eef1ec;
+      --header-bg: rgba(247, 248, 244, 0.92);
+      --header-line: rgba(215, 222, 212, 0.88);
+      --on-green: #ffffff;
       --shadow: 0 18px 45px rgba(23, 32, 27, 0.08);
+      color-scheme: light;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #0e1512;
+      --panel: #151f1a;
+      --ink: #edf4ef;
+      --copy: #cbd8d1;
+      --muted: #9cad9f;
+      --soft: #26322d;
+      --line: #304139;
+      --green: #8ed6b5;
+      --blue: #91b8ff;
+      --rust: #f0a27f;
+      --gold: #e1bf66;
+      --chip-bg: #1f332b;
+      --profile-link-bg: #101a16;
+      --thumb-bg: #18241f;
+      --header-bg: rgba(14, 21, 18, 0.92);
+      --header-line: rgba(48, 65, 57, 0.9);
+      --on-green: #0e1512;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+      color-scheme: dark;
     }
 
     * {
@@ -62,8 +104,8 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      border-bottom: 1px solid rgba(215, 222, 212, 0.88);
-      background: rgba(247, 248, 244, 0.92);
+      border-bottom: 1px solid var(--header-line);
+      background: var(--header-bg);
       backdrop-filter: blur(14px);
     }
 
@@ -91,7 +133,7 @@
       border: 1px solid var(--green);
       border-radius: 8px;
       background: var(--green);
-      color: #fff;
+      color: var(--on-green);
       font-size: 13px;
     }
 
@@ -134,7 +176,41 @@
     .btn.primary {
       border-color: var(--green);
       background: var(--green);
-      color: #fff;
+      color: var(--on-green);
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--green);
+    }
+
+    .theme-toggle svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .theme-toggle .icon-sun {
+      display: none;
+    }
+
+    html[data-theme="dark"] .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    html[data-theme="dark"] .theme-toggle .icon-sun {
+      display: block;
     }
 
     .page {
@@ -219,7 +295,7 @@
       padding: 5px 9px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: #fbfcf8;
+      background: var(--profile-link-bg);
       color: var(--ink);
       font-size: 12px;
       font-weight: 720;
@@ -281,7 +357,7 @@
     .lead {
       max-width: 790px;
       margin: 18px 0 22px;
-      color: #344039;
+      color: var(--copy);
       font-size: clamp(18px, 2vw, 23px);
       line-height: 1.45;
     }
@@ -371,7 +447,7 @@
 
     .body-copy {
       margin: 0;
-      color: #344039;
+      color: var(--copy);
       font-size: 14px;
     }
 
@@ -392,7 +468,7 @@
       min-height: 26px;
       padding: 4px 8px;
       border-radius: 999px;
-      background: #eef4f1;
+      background: var(--chip-bg);
       color: var(--green);
       font-size: 12px;
       font-weight: 760;
@@ -407,7 +483,7 @@
     .pub-thumb {
       min-height: 142px;
       border-right: 1px solid var(--line);
-      background: #eef1ec;
+      background: var(--thumb-bg);
     }
 
     .pub-thumb img {
@@ -428,7 +504,7 @@
 
     .pub-desc {
       margin: 10px 0 0;
-      color: #344039;
+      color: var(--copy);
       font-size: 14px;
     }
 
@@ -471,7 +547,7 @@
     .skill-card p,
     .edu-card p {
       margin: 0;
-      color: #344039;
+      color: var(--copy);
       font-size: 14px;
     }
 
@@ -602,6 +678,22 @@
         <li><a href="#skills">Skills</a></li>
       </ul>
       <div class="nav-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.9 4.9 1.4 1.4"></path>
+            <path d="m17.7 17.7 1.4 1.4"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.3 17.7-1.4 1.4"></path>
+            <path d="m19.1 4.9-1.4 1.4"></path>
+          </svg>
+        </button>
         <a class="btn" href="https://github.com/oyaah" target="_blank" rel="noopener">GitHub</a>
         <a class="btn primary" href="assets/resume.pdf">Resume</a>
       </div>
@@ -812,5 +904,34 @@
       <span>Built for GitHub Pages. Content from resume and linked project work.</span>
     </div>
   </footer>
+  <script>
+    (function () {
+      var button = document.querySelector(".theme-toggle");
+      var metaTheme = document.querySelector('meta[name="theme-color"]');
+
+      function setTheme(theme) {
+        var isDark = theme === "dark";
+        document.documentElement.dataset.theme = theme;
+        if (button) {
+          button.setAttribute("aria-pressed", String(isDark));
+          button.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+          button.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
+        }
+        if (metaTheme) {
+          metaTheme.setAttribute("content", isDark ? "#0e1512" : "#173b2f");
+        }
+      }
+
+      setTheme(document.documentElement.dataset.theme || "light");
+
+      if (button) {
+        button.addEventListener("click", function () {
+          var nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          localStorage.setItem("theme", nextTheme);
+          setTheme(nextTheme);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
