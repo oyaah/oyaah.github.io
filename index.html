@@ -4,16 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Yash Bansal | AI Engineer & Researcher</title>
-<meta name="description" content="AI Engineer & Researcher at IIT Roorkee. Building agentic LLM systems, RAG pipelines, and Multimodal Deep Learning models. Published at AAAI & ICVGIP."/>
-<meta name="keywords" content="Yash Bansal, AI Engineer, ML Researcher, IIT Roorkee, LLM, RAG, Multimodal AI, Computer Vision"/>
-<meta property="og:title" content="Yash Bansal | AI Engineer & Researcher"/>
-<meta property="og:description" content="AI Engineer & Researcher at IIT Roorkee. Building agentic LLM systems, RAG pipelines, and Multimodal Deep Learning models."/>
-<meta property="og:site_name" content="Yash Bansal Portfolio"/>
-<meta name="twitter:card" content="summary_large_image"/>
-
-<script>
-(function(){try{var s=localStorage.getItem("theme");var t=(s==="light"||s==="dark")?s:(window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
-</script>
+<meta name="description" content="AI Engineer & Researcher at IIT Roorkee. Building agentic LLM systems, RAG pipelines, and Multimodal Deep Learning models."/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#ffffff;--text:#111;--accent:#2563eb;--muted:#666;--card:#f9f9f9;--border:#eee}
@@ -25,10 +16,13 @@ header{display:flex;justify-content:space-between;align-items:center;margin-bott
 .nav{display:flex;gap:20px}
 .nav a{color:var(--muted);text-decoration:none;font-size:14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:var(--card);border:1px solid var(--border);padding:24px;border-radius:16px}
+.card{background:var(--card);border:1px solid var(--border);padding:24px;border-radius:16px;display:flex;flex-direction:column;height:100%;transition:transform .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}
 .card h3{margin-top:0;font-size:18px}
-.card p{font-size:14px;color:var(--muted)}
-.btn{display:inline-block;padding:8px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600}
+.card p{font-size:14px;color:var(--muted);flex-grow:1}
+.card .links{margin-top:16px;display:flex;gap:12px}
+.btn{display:inline-block;padding:6px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:12px;font-weight:600}
+.btn-alt{background:transparent;border:1px solid var(--border);color:var(--text)}
 </style>
 </head>
 <body>
@@ -38,13 +32,13 @@ header{display:flex;justify-content:space-between;align-items:center;margin-bott
     <nav class="nav">
       <a href="#about">About</a>
       <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Systems</a>
     </nav>
   </header>
 
   <section id="about" style="margin-bottom:60px">
     <h1>Building Agentic AI systems.</h1>
-    <p style="max-width:600px;font-size:18px">AI Engineer & Researcher at IIT Roorkee. Expert in Agentic LLM systems, RAG pipelines, and Multimodal Deep Learning. Published at AAAI 2026 & ICVGIP 2025.</p>
+    <p style="max-width:600px;font-size:18px">AI Engineer & Researcher at IIT Roorkee. Expert in Agentic LLM systems, RAG pipelines, and Multimodal Deep Learning.</p>
     <a href="assets/resume.pdf" class="btn">View Resume</a>
   </section>
 
@@ -54,35 +48,47 @@ header{display:flex;justify-content:space-between;align-items:center;margin-bott
       <div class="card">
         <h3>DLSG-CoT</h3>
         <p>Zero-Shot Vision Language Reasoning via Dual-layer Scene Graph.</p>
-        <a href="https://drive.google.com/file/d/13Y9duvrOJT0ljtGZkvLk9eUoOgfj7-Ad/view" target="_blank" style="color:var(--accent)">Read Paper →</a>
+        <div class="links">
+          <a href="https://drive.google.com/file/d/13Y9duvrOJT0ljtGZkvLk9eUoOgfj7-Ad/view" target="_blank" class="btn">Paper</a>
+          <a href="https://aaai.org/conference/aaai/aaai-26/student-abstract-and-poster-program-call/" target="_blank" class="btn btn-alt">AAAI 2026</a>
+        </div>
       </div>
       <div class="card">
         <h3>TWiST</h3>
         <p>Temporal Weakly-Supervised Triplets Recognition in Surgical Videos.</p>
-        <a href="https://drive.google.com/file/d/1KkKK-LdBYvVaNfnttTkIDwdXNlZHZ_PK/view" target="_blank" style="color:var(--accent)">Read Paper →</a>
+        <div class="links">
+          <a href="https://drive.google.com/file/d/1KkKK-LdBYvVaNfnttTkIDwdXNlZHZ_PK/view" target="_blank" class="btn">Paper</a>
+          <a href="https://aaai.org/conference/aaai/aaai-26/student-abstract-and-poster-program-call/" target="_blank" class="btn btn-alt">AAAI 2026</a>
+        </div>
       </div>
       <div class="card">
         <h3>MorphoChanNet</h3>
         <p>Weighted ColorMorphology for TB Bacilli Detection.</p>
-        <a href="https://drive.google.com/file/d/1fDiYDcPjGdapSoGi3nkUm9RmteZjxBKi/view" target="_blank" style="color:var(--accent)">Read Paper →</a>
+        <div class="links">
+          <a href="https://drive.google.com/file/d/1fDiYDcPjGdapSoGi3nkUm9RmteZjxBKi/view" target="_blank" class="btn">Paper</a>
+          <a href="https://icvgip.in/2025/" target="_blank" class="btn btn-alt">ICVGIP 2025</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Systems</h2>
+    <h2>Selected Systems</h2>
     <div class="grid">
       <div class="card">
         <h3>DocVault</h3>
         <p>Production RAG with NLI contradiction stripping & hybrid retrieval.</p>
+        <a href="https://github.com/oyaah" target="_blank" class="btn btn-alt" style="width:fit-content">GitHub →</a>
       </div>
       <div class="card">
         <h3>Research-Swarm</h3>
         <p>Hierarchical multi-agent orchestration built with LangGraph.</p>
+        <a href="https://github.com/oyaah" target="_blank" class="btn btn-alt" style="width:fit-content">GitHub →</a>
       </div>
       <div class="card">
         <h3>Satellite Valuation</h3>
         <p>Multimodal pipeline fusing satellite features with tabular data.</p>
+        <a href="https://github.com/oyaah" target="_blank" class="btn btn-alt" style="width:fit-content">GitHub →</a>
       </div>
     </div>
   </section>
