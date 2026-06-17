@@ -735,7 +735,7 @@
     <div class="main">
       <section class="hero">
         <div class="kicker">AI systems, research, and applied ML</div>
-        <p class="lead">I work across production-grade RAG, multi-agentic systems, and deep learning models for various imaging probelems.</p>
+        <p class="lead">I work across production-grade RAG, multi-agentic systems, and deep learning models for imaging problems.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#projects">See projects</a>
           <a class="btn" href="#publications">Read publications</a>
@@ -825,11 +825,21 @@
           <article class="project-card featured">
             <div class="card-label">Reliable RAG</div>
             <div class="item-top">
-              <h3 class="title">DocVault: Zero-Hallucination RAG Pipeline</h3>
+              <h3 class="title">DocVault: Verified RAG Pipeline</h3>
               <a class="meta" href="https://github.com/oyaah/docvault" target="_blank" rel="noopener">Code</a>
             </div>
             <p class="body-copy">Production policy-QA RAG system that strips contradicted claims at inference using DeBERTa-v3 NLI verification, hybrid Pinecone + FTS5 retrieval, RRF fusion, reranking, confidence gating, and Redis session memory.</p>
-            <div class="tag-row"><span class="tag">0.995 faithfulness</span><span class="tag">0.5% hallucination</span><span class="tag">Celery</span><span class="tag">Prometheus</span></div>
+            <div class="tag-row"><span class="tag">99.5% faithfulness</span><span class="tag">0.5% hallucination rate</span><span class="tag">Celery</span><span class="tag">Prometheus</span></div>
+          </article>
+
+          <article class="project-card featured">
+            <div class="card-label">Biomedical agents</div>
+            <div class="item-top">
+              <h3 class="title">SysRev Agent: Systematic Review Pipeline</h3>
+              <span class="meta">Private build</span>
+            </div>
+            <p class="body-copy">Autonomous biomedical review agent that searches, deduplicates, screens papers, extracts structured study data, writes PRISMA-style reports, and audits whether each cited claim is supported by source spans.</p>
+            <div class="tag-row"><span class="tag">0.964 recall</span><span class="tag">0.650 WSS@95</span><span class="tag">120 candidates</span><span class="tag">28 gold includes</span></div>
           </article>
 
           <article class="project-card featured">
@@ -840,6 +850,16 @@
             </div>
             <p class="body-copy">LangGraph system with Planner, Researcher, Verifier, Analyst, and Writer agents; it routes across open and closed LLMs, stores memory in Qdrant, grounds outputs in citations, and evaluates quality with RAGAS.</p>
             <div class="tag-row"><span class="tag">LangGraph</span><span class="tag">Qdrant</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
+          </article>
+
+          <article class="project-card">
+            <div class="card-label">Career automation</div>
+            <div class="item-top">
+              <h3 class="title">job-hunter: Human-Gated Outreach Plugin</h3>
+              <a class="meta" href="https://github.com/oyaah/job-hunter" target="_blank" rel="noopener">Code</a>
+            </div>
+            <p class="body-copy">Claude Code and Codex plugin for job-hunt outreach: finds target people, verifies emails, researches hooks, drafts in the user's voice, and works LinkedIn through the user's own Chrome with approval before every send.</p>
+            <div class="tag-row"><span class="tag">8 MCP tools</span><span class="tag">40/day LinkedIn cap</span><span class="tag">Human review gate</span><span class="tag">Python 3.12+</span></div>
           </article>
 
           <article class="project-card">
@@ -876,11 +896,11 @@
           </article>
           <article class="skill-card">
             <h3>Retrieval and evaluation</h3>
-            <p>FAISS, LanceDB, Qdrant, Pinecone, SQLite FTS5, RAGAS, LLM-as-judge harnesses.</p>
+            <p>FAISS, LanceDB, Qdrant, Pinecone, SQLite FTS5, BM25, RRF, reranking, source-bounded eval.</p>
           </article>
           <article class="skill-card">
             <h3>ML and computer vision</h3>
-            <p>PyTorch, Hugging Face Transformers, scikit-learn, OpenCV, spaCy, ONNX Runtime.</p>
+            <p>PyTorch, Hugging Face Transformers, scikit-learn, OpenCV, spaCy, EfficientNet, Grad-CAM.</p>
           </article>
           <article class="skill-card">
             <h3>MLOps and data</h3>
@@ -907,7 +927,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span>© 2026 Yash Bansal</span>
-      <span>Built for GitHub Pages. Content from resume and linked project work.</span>
+      <span>Built for GitHub Pages. Source: <a href="https://github.com/oyaah/oyaah.github.io" target="_blank" rel="noopener">oyaah/oyaah.github.io</a></span>
     </div>
   </footer>
   <script>
