@@ -366,6 +366,10 @@
       gap: 34px;
     }
 
+    .about-grid.single {
+      grid-template-columns: minmax(0, 760px);
+    }
+
     .about-copy {
       color: var(--copy);
       font-size: 16px;
@@ -374,21 +378,6 @@
 
     .about-copy p {
       margin-bottom: 15px;
-    }
-
-    .about-list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      color: var(--copy);
-      font-size: 14px;
-    }
-
-    .about-list li {
-      border-top: 1px solid var(--line);
-      padding-top: 10px;
     }
 
     .project-list,
@@ -401,7 +390,7 @@
 
     .project-card {
       display: grid;
-      grid-template-columns: 86px minmax(0, 1fr) 44px;
+      grid-template-columns: 118px minmax(0, 1fr) 44px;
       gap: 20px;
       align-items: start;
       border: 1px solid var(--line);
@@ -571,10 +560,6 @@
       font-size: 14px;
     }
 
-    .skill-note {
-      color: var(--muted);
-    }
-
     .education-card {
       display: grid;
       grid-template-columns: 180px 1fr;
@@ -739,10 +724,11 @@
       <div>
         <p class="eyebrow">ai engineer / ml researcher / cv person who wandered into agents</p>
         <h1 id="hero-title">Yash Bansal</h1>
-        <p class="lead">I build <strong>evaluated AI systems</strong>: RAG that checks itself, agents with guardrails, and computer-vision models for medical imaging, satellite imagery, and other places pixels refuse to behave.</p>
-        <p class="hero-note">I like systems that can be measured. I also like slightly cursed security-agent ideas, as long as the audit log is not decorative.</p>
+        <p class="lead">I build <strong>autonomous agentic systems</strong> and computer-vision models, with research applied to medical imaging, satellite imagery, vision-language reasoning, and practical ML systems.</p>
+        <p class="hero-note">I like systems that can be measured. I also like CV research that survives noisy medical images, satellite tiles, and real-world mess.</p>
         <div class="quick-links" aria-label="Profile links">
           <a class="btn primary" href="#projects">see work</a>
+          <a class="btn" href="#publications">publications</a>
           <a class="btn" href="mailto:yash_b@bt.iitr.ac.in">mail</a>
           <a class="btn" href="https://github.com/oyaah" target="_blank" rel="noopener">github</a>
           <a class="btn" href="https://in.linkedin.com/in/yash-bansal-b506bb302" target="_blank" rel="noopener">linkedin</a>
@@ -761,7 +747,7 @@
       </div>
       <div class="identity-item">
         <dt>focus</dt>
-        <dd>Agents, RAG, computer vision, medical and satellite imagery</dd>
+        <dd>Agents, RAG, computer vision, lil bit agentic security</dd>
       </div>
       <div class="identity-item">
         <dt>research</dt>
@@ -778,28 +764,22 @@
         <h2>a bit about me</h2>
         <span class="section-code">profile.kernel</span>
       </div>
-      <div class="about-grid">
+      <div class="about-grid single">
         <div class="about-copy">
           <p>I am an AI engineer and ML researcher who likes the practical end of intelligence: retrieval pipelines that cite sources, agents that can be audited, and CV models that survive real imaging noise.</p>
-          <p>My research has touched vision-language reasoning, surgical video understanding, cytopathology, and satellite-driven valuation. My engineering work leans agentic: tool-use loops, scoped permissions, evaluation harnesses, and the occasional "what if the model tries something dumb?" cage.</p>
+          <p>My research spans vision-language reasoning, surgical video understanding, cytopathology, and satellite-driven valuation. On the engineering side, I build agentic systems, RAG pipelines, and computer-vision workflows that move from experiments into usable tools.</p>
         </div>
-        <ul class="about-list">
-          <li>Production RAG: hybrid retrieval, NLI checks, confidence gates, observability.</li>
-          <li>Computer vision: PyTorch, OpenCV, EfficientNet, Grad-CAM, OCR-heavy pipelines.</li>
-          <li>Agents: LangGraph/CrewAI, typed tools, memory, review gates, source-bounded eval.</li>
-          <li>Not a buzzword collector. The buzzwords are allowed in only after they pass tests.</li>
-        </ul>
       </div>
     </section>
 
     <section id="projects" class="section">
       <div class="section-head">
         <h2>selected work</h2>
-        <span class="section-code">six things, no warehouse</span>
+        <span class="section-code">six things, nothing common</span>
       </div>
       <div class="project-list">
         <article class="project-card">
-          <div class="project-year">2026<br>RAG</div>
+          <div class="project-year">verifiable rag</div>
           <div>
             <div class="project-title-row">
               <h3 class="title">DocVault: Verified RAG Pipeline</h3>
@@ -812,7 +792,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-year">2026<br>bio agents</div>
+          <div class="project-year">bio-agent</div>
           <div>
             <div class="project-title-row">
               <h3 class="title">SysRev Agent: Systematic Review Pipeline</h3>
@@ -825,7 +805,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-year">2026<br>agent security</div>
+          <div class="project-year">agent security</div>
           <div>
             <div class="project-title-row">
               <h3 class="title">ClaimsPilot: Protected Claims Agent</h3>
@@ -838,7 +818,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-year">2026<br>research</div>
+          <div class="project-year">autonomous agentic sys</div>
           <div>
             <div class="project-title-row">
               <h3 class="title">Research-Swarm: Multi-Agent Research System</h3>
@@ -851,7 +831,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-year">2025<br>remote sensing</div>
+          <div class="project-year">CV for Space</div>
           <div>
             <div class="project-title-row">
               <h3 class="title">Satellite-Driven Real Estate Valuation</h3>
@@ -864,7 +844,7 @@
         </article>
 
         <article class="project-card">
-          <div class="project-year">2026<br>outreach agents</div>
+          <div class="project-year">automation plugin</div>
           <div>
             <div class="project-title-row">
               <h3 class="title">job-hunter: Human-Gated Outreach Plugin</h3>
@@ -978,7 +958,7 @@
         </article>
         <article class="skill-card">
           <h3>Currently poking at</h3>
-          <p>Rust and TypeScript for agent infra / Web3 security builds. <span class="skill-note">Honest status: useful enough to ship small things, not pretending to be a compiler wizard.</span></p>
+          <p>Rust and TypeScript for agent infra / Web3 security builds.</p>
         </article>
       </div>
     </section>
