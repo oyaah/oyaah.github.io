@@ -4,63 +4,53 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Yash Bansal | AI Engineer and ML Researcher</title>
-  <meta name="description" content="Yash Bansal is an AI engineer and ML researcher at IIT Roorkee building agentic LLM systems, RAG pipelines, and multimodal deep learning systems across NLP, medical imaging, and remote sensing.">
+  <meta name="description" content="Yash Bansal is an AI engineer and ML researcher at IIT Roorkee building agentic LLM systems, evaluated RAG pipelines, and computer-vision models for medical imaging, satellite imagery, and applied ML.">
   <meta name="author" content="Yash Bansal">
-  <meta name="theme-color" content="#173b2f">
+  <meta name="theme-color" content="#050505">
   <script>
     (function () {
       try {
         var savedTheme = localStorage.getItem("theme");
-        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        var theme = savedTheme || (prefersDark ? "dark" : "light");
-        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.theme = savedTheme || "dark";
       } catch (error) {
-        document.documentElement.dataset.theme = "light";
+        document.documentElement.dataset.theme = "dark";
       }
     })();
   </script>
   <style>
     :root {
-      --bg: #f7f8f4;
-      --panel: #ffffff;
-      --ink: #17201b;
-      --copy: #344039;
-      --muted: #647069;
-      --soft: #e5e9df;
-      --line: #d7ded4;
-      --green: #173b2f;
-      --blue: #2457a6;
-      --rust: #9a4424;
-      --gold: #b4841f;
-      --chip-bg: #eef4f1;
-      --profile-link-bg: #fbfcf8;
-      --thumb-bg: #eef1ec;
-      --header-bg: rgba(247, 248, 244, 0.92);
-      --header-line: rgba(215, 222, 212, 0.88);
-      --on-green: #ffffff;
-      --shadow: 0 18px 45px rgba(23, 32, 27, 0.08);
+      --bg: #f4f1e8;
+      --panel: #fffaf0;
+      --ink: #11100d;
+      --copy: #37342e;
+      --muted: #706a5f;
+      --line: #d8d0bf;
+      --soft: #ece4d5;
+      --accent: #b24d2b;
+      --accent-2: #345f8a;
+      --chip: #ebe0ce;
+      --chip-ink: #211d17;
+      --button: #11100d;
+      --button-ink: #f8f3e8;
+      --shadow: none;
       color-scheme: light;
     }
 
     html[data-theme="dark"] {
-      --bg: #0e1512;
-      --panel: #151f1a;
-      --ink: #edf4ef;
-      --copy: #cbd8d1;
-      --muted: #9cad9f;
-      --soft: #26322d;
-      --line: #304139;
-      --green: #8ed6b5;
-      --blue: #91b8ff;
-      --rust: #f0a27f;
-      --gold: #e1bf66;
-      --chip-bg: #1f332b;
-      --profile-link-bg: #101a16;
-      --thumb-bg: #18241f;
-      --header-bg: rgba(14, 21, 18, 0.92);
-      --header-line: rgba(48, 65, 57, 0.9);
-      --on-green: #0e1512;
-      --shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+      --bg: #050505;
+      --panel: #0b0b0b;
+      --ink: #f3f0e8;
+      --copy: #d4d0c7;
+      --muted: #8b887f;
+      --line: #242424;
+      --soft: #141414;
+      --accent: #f0a178;
+      --accent-2: #8eb7ff;
+      --chip: #151515;
+      --chip-ink: #e7dfcf;
+      --button: #f3f0e8;
+      --button-ink: #050505;
+      --shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
       color-scheme: dark;
     }
 
@@ -74,20 +64,27 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px) 0 0 / 72px 72px,
+        var(--bg);
       color: var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      line-height: 1.65;
+    }
+
+    body::selection {
+      background: var(--accent);
+      color: #050505;
     }
 
     a {
-      color: var(--blue);
+      color: inherit;
       text-decoration: none;
-      text-underline-offset: 3px;
+      text-underline-offset: 4px;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: var(--accent);
     }
 
     img {
@@ -95,8 +92,8 @@
       max-width: 100%;
     }
 
-    .container {
-      width: min(1160px, calc(100% - 36px));
+    .shell {
+      width: min(860px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -104,101 +101,78 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      border-bottom: 1px solid var(--header-line);
-      background: var(--header-bg);
-      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(16px);
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 64px;
-      gap: 24px;
+      min-height: 58px;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--muted);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       color: var(--ink);
-      font-weight: 800;
+      letter-spacing: 0;
     }
 
     .brand-mark {
-      display: grid;
-      width: 32px;
-      height: 32px;
+      display: inline-grid;
+      width: 28px;
+      height: 28px;
       place-items: center;
-      border: 1px solid var(--green);
-      border-radius: 8px;
-      background: var(--green);
-      color: var(--on-green);
-      font-size: 13px;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-weight: 800;
     }
 
-    .nav-links {
+    .nav-links,
+    .nav-actions {
       display: flex;
       align-items: center;
       gap: 18px;
       margin: 0;
       padding: 0;
       list-style: none;
-      font-size: 14px;
-      font-weight: 650;
     }
 
-    .nav-links a {
+    .nav a {
+      color: var(--muted);
+    }
+
+    .nav a:hover {
       color: var(--ink);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 36px;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      color: var(--ink);
-      font-size: 14px;
-      font-weight: 750;
-      white-space: nowrap;
-    }
-
-    .btn.primary {
-      border-color: var(--green);
-      background: var(--green);
-      color: var(--on-green);
     }
 
     .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
+      display: inline-grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
       border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      color: var(--ink);
+      background: transparent;
+      color: var(--muted);
       cursor: pointer;
     }
 
-    .theme-toggle:hover {
-      border-color: var(--green);
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      color: var(--ink);
+      border-color: var(--accent);
+      outline: 0;
     }
 
     .theme-toggle svg {
-      width: 18px;
-      height: 18px;
+      width: 15px;
+      height: 15px;
     }
 
     .theme-toggle .icon-sun {
@@ -214,42 +188,22 @@
     }
 
     .page {
+      padding: 68px 0 74px;
+    }
+
+    .hero {
       display: grid;
-      grid-template-columns: 310px minmax(0, 1fr);
-      gap: 42px;
-      padding: 46px 0 64px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1fr) 148px;
+      gap: 46px;
+      align-items: end;
+      padding-bottom: 42px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .profile-rail {
-      position: sticky;
-      top: 92px;
-    }
-
-    .profile-card {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .portrait-wrap {
-      padding: 18px 18px 0;
-    }
-
-    .portrait {
-      width: min(100%, 210px);
-      aspect-ratio: 1;
-      margin: 0 auto;
-      border-radius: 8px;
-      object-fit: cover;
-      object-position: center;
-      border: 1px solid var(--line);
-    }
-
-    .profile-body {
-      padding: 18px;
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     h1,
@@ -260,188 +214,236 @@
     }
 
     h1 {
-      margin-bottom: 4px;
-      font-size: clamp(34px, 6vw, 64px);
-      line-height: 0.98;
+      margin-bottom: 12px;
+      font-size: clamp(54px, 11vw, 112px);
+      line-height: 0.86;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     }
 
-    .profile-name {
+    .lead {
+      max-width: 670px;
       margin: 0;
-      color: var(--green);
-      font-size: 25px;
-      font-weight: 900;
-      line-height: 1.05;
-      text-transform: none;
+      color: var(--copy);
+      font-size: clamp(18px, 2.4vw, 25px);
+      line-height: 1.35;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    .profile-role {
-      margin: 8px 0 14px;
+    .lead strong {
+      color: var(--ink);
+      font-weight: 650;
+    }
+
+    .hero-note {
+      max-width: 620px;
+      margin: 18px 0 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .profile-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-
-    .chip,
-    .profile-links a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 5px 9px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--profile-link-bg);
-      color: var(--ink);
-      font-size: 12px;
-      font-weight: 720;
-    }
-
-    .fact-list {
+    .portrait-card {
       display: grid;
       gap: 12px;
-      margin: 0;
+      justify-items: end;
     }
 
-    .fact {
-      display: grid;
-      gap: 2px;
-      padding-top: 12px;
-      border-top: 1px solid var(--soft);
+    .portrait {
+      width: 148px;
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(0.18) contrast(1.05);
     }
 
-    .fact dt {
+    .status-pill {
+      width: 148px;
+      border: 1px solid var(--line);
+      padding: 8px 10px;
       color: var(--muted);
       font-size: 11px;
-      font-weight: 800;
+      line-height: 1.35;
       text-transform: uppercase;
     }
 
-    .fact dd {
-      margin: 0;
-      font-size: 13px;
-      font-weight: 650;
-    }
-
-    .main {
-      min-width: 0;
-    }
-
-    .hero {
-      padding: 8px 0 34px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-      color: var(--rust);
-      font-size: 13px;
-      font-weight: 850;
-      text-transform: uppercase;
-    }
-
-    .kicker::before {
-      content: "";
-      width: 34px;
-      height: 2px;
-      background: var(--rust);
-    }
-
-    .lead {
-      max-width: 790px;
-      margin: 18px 0 22px;
-      color: var(--copy);
-      font-size: clamp(18px, 2vw, 23px);
-      line-height: 1.45;
-    }
-
-    .hero-actions {
+    .quick-links {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .btn.primary {
+      border-color: var(--button);
+      background: var(--button);
+      color: var(--button-ink);
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn.primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #050505;
+    }
+
+    .identity-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin: 34px 0 0;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .identity-item {
+      min-height: 82px;
+      padding: 14px;
+      background: var(--bg);
+    }
+
+    .identity-item dt {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .identity-item dd {
+      margin: 0;
+      color: var(--copy);
+      font-size: 13px;
     }
 
     .section {
-      padding: 42px 0 0;
-      scroll-margin-top: 90px;
+      padding: 62px 0 0;
+      scroll-margin-top: 82px;
     }
 
     .section-head {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 22px;
-      align-items: start;
-      margin-bottom: 20px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
     }
 
     h2 {
       margin: 0;
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 900;
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .section-code {
+      color: var(--muted);
+      font-size: 12px;
       text-transform: uppercase;
     }
 
-    .section-intro {
-      max-width: 760px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
     }
 
-    .timeline,
+    .about-copy {
+      color: var(--copy);
+      font-size: 16px;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .about-copy p {
+      margin-bottom: 15px;
+    }
+
+    .about-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--copy);
+      font-size: 14px;
+    }
+
+    .about-list li {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .project-list,
     .pub-list,
-    .project-grid,
+    .timeline,
     .skills-grid {
       display: grid;
       gap: 14px;
     }
 
-    .timeline {
-      position: relative;
-    }
-
-    .timeline-item,
-    .pub-card,
-    .project-card,
-    .skill-card,
-    .edu-card {
+    .project-card {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr) 44px;
+      gap: 20px;
+      align-items: start;
       border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-    }
-
-    .timeline-item,
-    .project-card,
-    .skill-card,
-    .edu-card {
+      background: color-mix(in srgb, var(--panel) 84%, transparent);
       padding: 18px;
+      box-shadow: var(--shadow);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
     }
 
-    .item-top {
+    .project-card:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--accent) 54%, var(--line));
+      background: color-mix(in srgb, var(--panel) 94%, var(--accent) 6%);
+    }
+
+    .project-year {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+      text-transform: uppercase;
+    }
+
+    .project-title-row {
       display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 8px;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 7px;
     }
 
     .title {
       margin: 0;
-      font-size: 17px;
-      line-height: 1.3;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.25;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 720;
     }
 
     .meta {
       color: var(--muted);
-      font-size: 13px;
-      font-weight: 650;
+      font-size: 12px;
       white-space: nowrap;
     }
 
@@ -451,45 +453,65 @@
       font-size: 14px;
     }
 
-    .body-copy + .body-copy {
-      margin-top: 8px;
+    .project-link {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .project-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-      margin-top: 12px;
+      margin-top: 13px;
     }
 
     .tag {
       display: inline-flex;
       align-items: center;
-      min-height: 26px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: var(--chip-bg);
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 760;
+      min-height: 25px;
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      background: var(--chip);
+      color: var(--chip-ink);
+      font-size: 11px;
+      line-height: 1;
+      white-space: nowrap;
     }
 
     .pub-card {
       display: grid;
-      grid-template-columns: 190px 1fr;
+      grid-template-columns: 180px minmax(0, 1fr);
       overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
     }
 
     .pub-thumb {
-      min-height: 142px;
+      min-height: 148px;
       border-right: 1px solid var(--line);
-      background: var(--thumb-bg);
+      background: var(--soft);
     }
 
     .pub-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      filter: grayscale(0.65) contrast(1.08);
+      transition: filter 180ms ease;
+    }
+
+    .pub-card:hover .pub-thumb img {
+      filter: grayscale(0.1) contrast(1.04);
     }
 
     .pub-body {
@@ -497,9 +519,11 @@
     }
 
     .pub-title {
-      margin: 0 0 6px;
+      margin: 0 0 5px;
+      color: var(--ink);
       font-size: 17px;
-      line-height: 1.32;
+      line-height: 1.3;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     .pub-desc {
@@ -508,138 +532,154 @@
       font-size: 14px;
     }
 
-    .project-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .timeline-item {
+      border-left: 1px solid var(--line);
+      padding: 0 0 16px 18px;
     }
 
-    .project-card {
+    .timeline-item + .timeline-item {
+      padding-top: 6px;
+    }
+
+    .timeline-top {
       display: flex;
-      min-height: 234px;
-      flex-direction: column;
-    }
-
-    .project-card.featured {
-      border-color: rgba(36, 87, 166, 0.35);
-      box-shadow: 0 16px 34px rgba(36, 87, 166, 0.08);
-    }
-
-    .project-card .body-copy {
-      margin-bottom: auto;
-    }
-
-    .card-label {
-      margin-bottom: 10px;
-      color: var(--rust);
-      font-size: 12px;
-      font-weight: 850;
-      text-transform: uppercase;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 8px;
     }
 
     .skills-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .skill-card h3 {
-      margin: 0 0 8px;
-      font-size: 15px;
+    .skill-card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 18px;
     }
 
-    .skill-card p,
-    .edu-card p {
+    .skill-card h3 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .skill-card p {
       margin: 0;
       color: var(--copy);
       font-size: 14px;
     }
 
-    .service-grid {
+    .skill-note {
+      color: var(--muted);
+    }
+
+    .education-card {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 18px;
     }
 
     .footer {
       border-top: 1px solid var(--line);
-      padding: 28px 0;
+      padding: 18px 0;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      overflow: hidden;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
       gap: 18px;
+      margin-bottom: 14px;
     }
 
-    @media (max-width: 980px) {
-      .page {
-        grid-template-columns: 1fr;
-        gap: 26px;
-        padding-top: 28px;
+    .ticker {
+      display: flex;
+      width: max-content;
+      gap: 34px;
+      animation: ticker 24s linear infinite;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .ticker span {
+      display: inline-flex;
+      gap: 10px;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
 
-      .profile-rail {
-        position: static;
-      }
-
-      .profile-card {
-        display: grid;
-        grid-template-columns: 180px 1fr;
-      }
-
-      .portrait-wrap {
-        padding: 18px;
-      }
-
-      .profile-body {
-        padding-left: 0;
-      }
-
-      .section-head {
-        grid-template-columns: 1fr;
-        gap: 8px;
+      .project-card,
+      .pub-thumb img,
+      .ticker {
+        animation: none;
+        transition: none;
       }
     }
 
     @media (max-width: 760px) {
-      .container {
-        width: min(100% - 28px, 1160px);
+      .shell {
+        width: min(100% - 26px, 860px);
       }
 
       .nav {
-        align-items: flex-start;
         min-height: auto;
-        padding: 14px 0;
+        padding: 13px 0;
       }
 
       .nav-links {
         display: none;
       }
 
-      .nav-actions {
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
       .page {
-        padding-top: 22px;
+        padding-top: 44px;
       }
 
-      .profile-card {
+      .hero {
         grid-template-columns: 1fr;
+        gap: 24px;
       }
 
-      .portrait-wrap {
-        padding-bottom: 0;
+      .portrait-card {
+        grid-template-columns: 112px 1fr;
+        justify-items: start;
+        align-items: end;
       }
 
-      .profile-body {
-        padding: 18px;
+      .portrait,
+      .status-pill {
+        width: 112px;
       }
 
-      .project-grid,
+      .identity-strip,
+      .about-grid,
       .skills-grid,
-      .service-grid {
+      .education-card {
         grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .project-link {
+        width: auto;
+        height: 34px;
       }
 
       .pub-card {
@@ -647,38 +687,33 @@
       }
 
       .pub-thumb {
-        min-height: 180px;
         border-right: 0;
         border-bottom: 1px solid var(--line);
       }
 
-      .item-top,
+      .timeline-top,
       .footer-inner {
         flex-direction: column;
         gap: 4px;
-      }
-
-      .meta {
-        white-space: normal;
       }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
-    <nav class="container nav" aria-label="Primary navigation">
+    <nav class="shell nav" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Yash Bansal home">
-        <span class="brand-mark">YB</span>
-        <span>Yash Bansal</span>
+        <span class="brand-mark">yb</span>
+        <span>[~]</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">work</a></li>
+        <li><a href="#publications">papers</a></li>
+        <li><a href="#skills">stack</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Toggle dark mode">
+        <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="true" title="Switch theme">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
           </svg>
@@ -686,250 +721,304 @@
             <circle cx="12" cy="12" r="4"></circle>
             <path d="M12 2v2"></path>
             <path d="M12 20v2"></path>
-            <path d="m4.9 4.9 1.4 1.4"></path>
-            <path d="m17.7 17.7 1.4 1.4"></path>
             <path d="M2 12h2"></path>
             <path d="M20 12h2"></path>
+            <path d="m4.9 4.9 1.4 1.4"></path>
+            <path d="m17.7 17.7 1.4 1.4"></path>
             <path d="m6.3 17.7-1.4 1.4"></path>
             <path d="m19.1 4.9-1.4 1.4"></path>
           </svg>
         </button>
-        <a class="btn" href="https://github.com/oyaah" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn primary" href="assets/resume.pdf">Resume</a>
+        <a href="assets/resume.pdf">resume</a>
       </div>
     </nav>
   </header>
 
-  <main id="top" class="container page">
-    <aside class="profile-rail" aria-label="Profile summary">
-      <section class="profile-card">
-        <div class="portrait-wrap">
-          <img class="portrait" src="assets/images/profile.jpeg" alt="Yash Bansal">
+  <main id="top" class="shell page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">ai engineer / ml researcher / cv person who wandered into agents</p>
+        <h1 id="hero-title">Yash Bansal</h1>
+        <p class="lead">I build <strong>evaluated AI systems</strong>: RAG that checks itself, agents with guardrails, and computer-vision models for medical imaging, satellite imagery, and other places pixels refuse to behave.</p>
+        <p class="hero-note">I like systems that can be measured. I also like slightly cursed security-agent ideas, as long as the audit log is not decorative.</p>
+        <div class="quick-links" aria-label="Profile links">
+          <a class="btn primary" href="#projects">see work</a>
+          <a class="btn" href="mailto:yash_b@bt.iitr.ac.in">mail</a>
+          <a class="btn" href="https://github.com/oyaah" target="_blank" rel="noopener">github</a>
+          <a class="btn" href="https://in.linkedin.com/in/yash-bansal-b506bb302" target="_blank" rel="noopener">linkedin</a>
         </div>
-        <div class="profile-body">
-          <h1 class="profile-name">Yash Bansal</h1>
-          <p class="profile-role">AI Engineer and ML Researcher at IIT Roorkee</p>
-          <div class="profile-links" aria-label="Profile links">
-            <a href="mailto:yash_b@bt.iitr.ac.in">Email</a>
-            <a href="https://github.com/oyaah" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://in.linkedin.com/in/yash-bansal-b506bb302" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-          <dl class="fact-list">
-            <div class="fact">
-              <dt>Base</dt>
-              <dd>IIT Roorkee, B.Tech Biosciences and Bioengineering</dd>
-            </div>
-            <div class="fact">
-              <dt>Focus</dt>
-              <dd>Agentic LLMs, RAG, computer vision, medical imaging</dd>
-            </div>
-            <div class="fact">
-              <dt>Venues</dt>
-              <dd>AAAI 2026 Student Abstract, ICVGIP 2025</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-    </aside>
+      </div>
+      <div class="portrait-card">
+        <img class="portrait" src="assets/images/profile.jpeg" alt="Yash Bansal">
+        <div class="status-pill">IIT Roorkee<br>building with evidence</div>
+      </div>
+    </section>
 
-    <div class="main">
-      <section class="hero">
-        <div class="kicker">AI systems, research, and applied ML</div>
-        <p class="lead">I work across production-grade RAG, multi-agentic systems, and deep learning models for imaging problems.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">See projects</a>
-          <a class="btn" href="#publications">Read publications</a>
-          <a class="btn" href="assets/resume.pdf">Download resume</a>
-        </div>
-      </section>
+    <dl class="identity-strip" aria-label="Profile facts">
+      <div class="identity-item">
+        <dt>base</dt>
+        <dd>IIT Roorkee, B.Tech Biosciences and Bioengineering</dd>
+      </div>
+      <div class="identity-item">
+        <dt>focus</dt>
+        <dd>Agents, RAG, computer vision, medical and satellite imagery</dd>
+      </div>
+      <div class="identity-item">
+        <dt>research</dt>
+        <dd>AAAI 2026 Student Abstract, ICVGIP 2025</dd>
+      </div>
+      <div class="identity-item">
+        <dt>side quests</dt>
+        <dd>Agentic security, Web3 infra, and making evals earn their keep</dd>
+      </div>
+    </dl>
 
-      <section id="publications" class="section">
-        <div class="section-head">
-          <h2>Publications</h2>
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2>a bit about me</h2>
+        <span class="section-code">profile.kernel</span>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I am an AI engineer and ML researcher who likes the practical end of intelligence: retrieval pipelines that cite sources, agents that can be audited, and CV models that survive real imaging noise.</p>
+          <p>My research has touched vision-language reasoning, surgical video understanding, cytopathology, and satellite-driven valuation. My engineering work leans agentic: tool-use loops, scoped permissions, evaluation harnesses, and the occasional "what if the model tries something dumb?" cage.</p>
         </div>
-        <div class="pub-list">
-          <article class="pub-card">
-            <a class="pub-thumb" href="https://drive.google.com/file/d/13Y9duvrOJT0ljtGZkvLk9eUoOgfj7-Ad/view" target="_blank" rel="noopener">
-              <img src="assets/images/dlsg.png" alt="Dual-layer scene graph paper figure">
-            </a>
-            <div class="pub-body">
-              <h3 class="pub-title">Zero-Shot Vision Language Reasoning via Dual-layer Scene Graph Chain of Thoughts</h3>
-              <div class="meta">Yash Bansal et al. - AAAI 2026 Student Abstract</div>
-              <p class="pub-desc">Introduces a scene-graph-first reasoning pipeline that makes VLM answers more structured by separating object relationships from higher-level chain-of-thought reasoning.</p>
-              <div class="tag-row"><span class="tag">Vision-language reasoning</span><span class="tag">Scene graphs</span><span class="tag">Zero-shot</span></div>
-            </div>
-          </article>
+        <ul class="about-list">
+          <li>Production RAG: hybrid retrieval, NLI checks, confidence gates, observability.</li>
+          <li>Computer vision: PyTorch, OpenCV, EfficientNet, Grad-CAM, OCR-heavy pipelines.</li>
+          <li>Agents: LangGraph/CrewAI, typed tools, memory, review gates, source-bounded eval.</li>
+          <li>Not a buzzword collector. The buzzwords are allowed in only after they pass tests.</li>
+        </ul>
+      </div>
+    </section>
 
-          <article class="pub-card">
-            <a class="pub-thumb" href="https://drive.google.com/file/d/1KkKK-LdBYvVaNfnttTkIDwdXNlZHZ_PK/view" target="_blank" rel="noopener">
-              <img src="assets/images/twist.png" alt="TWiST paper figure">
-            </a>
-            <div class="pub-body">
-              <h3 class="pub-title">TWiST: Temporal Weakly-Supervised Triplets Recognition in Surgical Videos</h3>
-              <div class="meta">Pranshu Danani, Yash Bansal et al. - AAAI 2026 Student Abstract</div>
-              <p class="pub-desc">Targets tool-tissue-action triplet recognition in surgical video by using temporal weak supervision, reducing dependence on dense frame-level labels.</p>
-              <div class="tag-row"><span class="tag">Surgical AI</span><span class="tag">Temporal learning</span><span class="tag">Weak supervision</span></div>
-            </div>
-          </article>
-
-          <article class="pub-card">
-            <a class="pub-thumb" href="https://drive.google.com/file/d/1fDiYDcPjGdapSoGi3nkUm9RmteZjxBKi/view" target="_blank" rel="noopener">
-              <img src="assets/images/morphochannet.png" alt="Morphology feature fusion paper figure">
-            </a>
-            <div class="pub-body">
-              <h3 class="pub-title">Weighted ColorMorphology Feature Fusion for Tuberculosis Bacilli Detection from Cytopathology Images</h3>
-              <div class="meta">Yash Bansal et al. - ICVGIP 2025</div>
-              <p class="pub-desc">Builds a medical-imaging classifier for TB bacilli using weighted color and morphology channels, improving sensitivity on noisy cytopathology smears.</p>
-              <div class="tag-row"><span class="tag">Medical imaging</span><span class="tag">Cytopathology</span><span class="tag">ICVGIP</span></div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="experience" class="section">
-        <div class="section-head">
-          <h2>Experience</h2>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="item-top">
-              <div>
-                <h3 class="title">Machine Learning Intern - Whyminds.ai</h3>
-                <p class="body-copy">Built a CrewAI-based multi-agent pipeline for LinkedIn publishing: AI-news scraping, NER topic tagging, LLM drafting, activity logging, and scheduled content operations for 5+ posts per week.</p>
-              </div>
-              <div class="meta">Jun 2025 - Jul 2025</div>
-            </div>
-            <p class="body-copy">Also shipped an OCR extraction pipeline with PaddleOCR and LayoutLMv3 for noisy PAN and tax documents, using regex normalization and confidence thresholds to clean field-level outputs.</p>
-            <div class="tag-row"><span class="tag">CrewAI</span><span class="tag">PaddleOCR</span><span class="tag">LayoutLMv3</span><span class="tag">NER</span></div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="item-top">
-              <div>
-                <h3 class="title">Medical Imaging Research - Parimal Lab</h3>
-                <p class="body-copy">Worked on cytopathology image analysis for acid-fast bacilli detection, designing a color-morphology feature fusion model around illumination, saturation, hue, and Sobel edge channels.</p>
-              </div>
-              <div class="meta">ICVGIP 2025</div>
-            </div>
-            <p class="body-copy">This line of work became the ICVGIP paper on TB bacilli detection, with channel attention, reconstruction-loss weighting, focal loss for false positives, and Grad-CAM interpretability.</p>
-            <div class="tag-row"><span class="tag">Medical imaging</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span><span class="tag">Grad-CAM</span></div>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects" class="section">
-        <div class="section-head">
-          <h2>Projects</h2>
-        </div>
-        <div class="project-grid">
-          <article class="project-card featured">
-            <div class="card-label">Reliable RAG</div>
-            <div class="item-top">
+    <section id="projects" class="section">
+      <div class="section-head">
+        <h2>selected work</h2>
+        <span class="section-code">six things, no warehouse</span>
+      </div>
+      <div class="project-list">
+        <article class="project-card">
+          <div class="project-year">2026<br>RAG</div>
+          <div>
+            <div class="project-title-row">
               <h3 class="title">DocVault: Verified RAG Pipeline</h3>
-              <a class="meta" href="https://github.com/oyaah/docvault" target="_blank" rel="noopener">Code</a>
+              <span class="meta">open source</span>
             </div>
-            <p class="body-copy">Production policy-QA RAG system that strips contradicted claims at inference using DeBERTa-v3 NLI verification, hybrid Pinecone + FTS5 retrieval, RRF fusion, reranking, confidence gating, and Redis session memory.</p>
-            <div class="tag-row"><span class="tag">99.5% faithfulness</span><span class="tag">0.5% hallucination rate</span><span class="tag">Celery</span><span class="tag">Prometheus</span></div>
-          </article>
+            <p class="body-copy">Policy-QA RAG system with hybrid Pinecone + SQLite FTS5 retrieval, RRF fusion, reranking, DeBERTa-v3 NLI verification, confidence gating, Redis session memory, Celery workers, and Prometheus metrics.</p>
+            <div class="tag-row"><span class="tag">99.5% faithfulness</span><span class="tag">0.5% hallucination rate</span><span class="tag">Pinecone + FTS5</span><span class="tag">NLI guard</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/oyaah/docvault" target="_blank" rel="noopener" aria-label="Open DocVault code">↗</a>
+        </article>
 
-          <article class="project-card featured">
-            <div class="card-label">Biomedical agents</div>
-            <div class="item-top">
+        <article class="project-card">
+          <div class="project-year">2026<br>bio agents</div>
+          <div>
+            <div class="project-title-row">
               <h3 class="title">SysRev Agent: Systematic Review Pipeline</h3>
-              <span class="meta">Private build</span>
+              <span class="meta">private build</span>
             </div>
-            <p class="body-copy">PICO-to-PRISMA systematic-review agent with a raw tool-use orchestrator, 50+ typed search/screen/extract/synthesize/verify tools, isolated subagents for full-text work, PubMed/OpenAlex/ClinicalTrials retrieval, citation-resolution checks, source-span claim ledgers, and CLEF TAR replay evaluation.</p>
-            <div class="tag-row"><span class="tag">0.964 recall</span><span class="tag">0.650 WSS@95</span><span class="tag">120 candidates</span></div>
-          </article>
+            <p class="body-copy">PICO-to-PRISMA systematic-review agent with a raw tool-use orchestrator, 50+ typed tools for search, screening, extraction, synthesis, and verification, isolated subagents for full-text work, source-span claim ledgers, and CLEF TAR replay evaluation.</p>
+            <div class="tag-row"><span class="tag">0.964 recall</span><span class="tag">0.650 WSS@95</span><span class="tag">120 candidates</span><span class="tag">citation audit</span></div>
+          </div>
+          <span class="project-link" aria-hidden="true">--</span>
+        </article>
 
-          <article class="project-card featured">
-            <div class="card-label">Agentic research</div>
-            <div class="item-top">
+        <article class="project-card">
+          <div class="project-year">2026<br>agent security</div>
+          <div>
+            <div class="project-title-row">
+              <h3 class="title">ClaimsPilot: Protected Claims Agent</h3>
+              <span class="meta">Terminal 3 / Web3</span>
+            </div>
+            <p class="body-copy">AI insurance-claims agent where the model can recommend decisions, but scoped grants, TEE-style policy checks, placeholder private data, and audit rows decide whether payouts or escalations are allowed. The agent gets a leash; the ledger keeps receipts.</p>
+            <div class="tag-row"><span class="tag">Next.js</span><span class="tag">T3 SDK</span><span class="tag">Rust WASM policy</span><span class="tag">PII placeholders</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/oyaah/ClaimsPilot-T3" target="_blank" rel="noopener" aria-label="Open ClaimsPilot code">↗</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-year">2026<br>research</div>
+          <div>
+            <div class="project-title-row">
               <h3 class="title">Research-Swarm: Multi-Agent Research System</h3>
-              <a class="meta" href="https://github.com/oyaah/research-swarm" target="_blank" rel="noopener">Code</a>
+              <span class="meta">open source</span>
             </div>
-            <p class="body-copy">LangGraph system with Planner, Researcher, Verifier, Analyst, and Writer agents; it routes across open and closed LLMs, stores memory in Qdrant, grounds outputs in citations, and evaluates quality with RAGAS.</p>
-            <div class="tag-row"><span class="tag">LangGraph</span><span class="tag">Qdrant</span><span class="tag">FastAPI</span><span class="tag">Docker</span></div>
-          </article>
+            <p class="body-copy">LangGraph system with Planner, Researcher, Verifier, Analyst, and Writer agents. It routes across open and closed LLMs, stores memory in Qdrant, grounds outputs in citations, and evaluates quality with RAGAS.</p>
+            <div class="tag-row"><span class="tag">LangGraph</span><span class="tag">Qdrant</span><span class="tag">FastAPI</span><span class="tag">RAGAS</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/oyaah/research-swarm" target="_blank" rel="noopener" aria-label="Open Research-Swarm code">↗</a>
+        </article>
 
-          <article class="project-card">
-            <div class="card-label">Career automation</div>
-            <div class="item-top">
-              <h3 class="title">job-hunter: Human-Gated Outreach Plugin</h3>
-              <a class="meta" href="https://github.com/oyaah/job-hunter" target="_blank" rel="noopener">Code</a>
-            </div>
-            <p class="body-copy">Local agent plugin that turns a resume and target list into researched, human-reviewed outreach: fit-scored contacts, verified email enrichment, voice-linted drafts, Chrome-based LinkedIn playbooks, file-backed state, and send gates before anything leaves the user's account.</p>
-            <div class="tag-row"><span class="tag">8 MCP tools</span><span class="tag">Verified emails</span><span class="tag">Human review gate</span><span class="tag">Chrome playbook</span></div>
-          </article>
-
-          <article class="project-card">
-            <div class="card-label">Remote sensing</div>
-            <div class="item-top">
+        <article class="project-card">
+          <div class="project-year">2025<br>remote sensing</div>
+          <div>
+            <div class="project-title-row">
               <h3 class="title">Satellite-Driven Real Estate Valuation</h3>
-              <a class="meta" href="https://github.com/oyaah/Satellite-property-valuation-CDC-X-Yhills-" target="_blank" rel="noopener">Code</a>
+              <span class="meta">competition build</span>
             </div>
-            <p class="body-copy">Multimodal price-prediction system fusing satellite imagery through EfficientNet-V2-S, FPN-Lite, and CBAM with tabular features through an MLP, then combining both streams with late fusion.</p>
-            <div class="tag-row"><span class="tag">R2 0.8182</span><span class="tag">RMSE $143K</span><span class="tag">PyTorch</span></div>
-          </article>
+            <p class="body-copy">Multimodal price-prediction system combining satellite imagery through EfficientNet-V2-S, FPN-Lite, and CBAM with tabular features through an MLP, then using late fusion for final valuation.</p>
+            <div class="tag-row"><span class="tag">R2 0.8182</span><span class="tag">RMSE $143K</span><span class="tag">PyTorch</span><span class="tag">EfficientNet</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/oyaah/Satellite-property-valuation-CDC-X-Yhills-" target="_blank" rel="noopener" aria-label="Open satellite valuation code">↗</a>
+        </article>
 
-          <article class="project-card">
-            <div class="card-label">E-commerce ML</div>
-            <div class="item-top">
-              <h3 class="title">Amazon ML Challenge: Product Entity Extraction</h3>
-              <a class="meta" href="https://github.com/oyaah/amazon-ml-challenge-2025" target="_blank" rel="noopener">Code</a>
+        <article class="project-card">
+          <div class="project-year">2026<br>outreach agents</div>
+          <div>
+            <div class="project-title-row">
+              <h3 class="title">job-hunter: Human-Gated Outreach Plugin</h3>
+              <span class="meta">open source</span>
             </div>
-            <p class="body-copy">Multimodal extraction pipeline for product attributes such as dimensions, quantities, and units from noisy listings and images, combining OCR cleanup with entity normalization for leaderboard-style evaluation.</p>
-            <div class="tag-row"><span class="tag">OCR</span><span class="tag">Entity extraction</span><span class="tag">Normalization</span></div>
-          </article>
-        </div>
-      </section>
+            <p class="body-copy">Local Claude Code and Codex plugin that turns a resume and target list into researched outreach: fit-scored contacts, verified email enrichment, voice-linted drafts, Chrome-based LinkedIn playbooks, file-backed state, and send gates.</p>
+            <div class="tag-row"><span class="tag">8 MCP tools</span><span class="tag">verified emails</span><span class="tag">human review gate</span><span class="tag">Chrome playbook</span></div>
+          </div>
+          <a class="project-link" href="https://github.com/oyaah/job-hunter" target="_blank" rel="noopener" aria-label="Open job-hunter code">↗</a>
+        </article>
+      </div>
+    </section>
 
-      <section id="skills" class="section">
-        <div class="section-head">
-          <h2>Skills</h2>
-          <p class="section-intro">A focused stack for building systems that can be evaluated, deployed, and debugged.</p>
-        </div>
-        <div class="skills-grid">
-          <article class="skill-card">
-            <h3>LLM systems and agents</h3>
-            <p>LangGraph, LangChain, CrewAI, LiteLLM, OpenAI API, vLLM, Groq, mem0.</p>
-          </article>
-          <article class="skill-card">
-            <h3>Retrieval and evaluation</h3>
-            <p>FAISS, LanceDB, Qdrant, Pinecone, SQLite FTS5, BM25, RRF, reranking, source-bounded eval.</p>
-          </article>
-          <article class="skill-card">
-            <h3>ML and computer vision</h3>
-            <p>PyTorch, Hugging Face Transformers, scikit-learn, OpenCV, spaCy, EfficientNet, Grad-CAM.</p>
-          </article>
-          <article class="skill-card">
-            <h3>MLOps and data</h3>
-            <p>Docker, FastAPI, AWS, GCP, MLflow, W&B, Celery, Redis, Prometheus, MySQL, MongoDB.</p>
-          </article>
-        </div>
-      </section>
+    <section id="publications" class="section">
+      <div class="section-head">
+        <h2>publications</h2>
+        <span class="section-code">research.receipts</span>
+      </div>
+      <div class="pub-list">
+        <article class="pub-card">
+          <a class="pub-thumb" href="https://drive.google.com/file/d/13Y9duvrOJT0ljtGZkvLk9eUoOgfj7-Ad/view" target="_blank" rel="noopener">
+            <img src="assets/images/dlsg.png" alt="Dual-layer scene graph paper figure">
+          </a>
+          <div class="pub-body">
+            <h3 class="pub-title">Zero-Shot Vision Language Reasoning via Dual-layer Scene Graph Chain of Thoughts</h3>
+            <div class="meta">Yash Bansal et al. - AAAI 2026 Student Abstract</div>
+            <p class="pub-desc">Scene-graph-first reasoning pipeline that makes VLM answers more structured by separating object relationships from higher-level chain-of-thought reasoning.</p>
+            <div class="tag-row"><span class="tag">vision-language reasoning</span><span class="tag">scene graphs</span><span class="tag">zero-shot</span></div>
+          </div>
+        </article>
 
-      <section id="education" class="section">
-        <div class="section-head">
-          <h2>Education</h2>
-          <p class="section-intro">Academic base and core training.</p>
+        <article class="pub-card">
+          <a class="pub-thumb" href="https://drive.google.com/file/d/1KkKK-LdBYvVaNfnttTkIDwdXNlZHV_PK/view" target="_blank" rel="noopener">
+            <img src="assets/images/twist.png" alt="TWiST paper figure">
+          </a>
+          <div class="pub-body">
+            <h3 class="pub-title">TWiST: Temporal Weakly-Supervised Triplets Recognition in Surgical Videos</h3>
+            <div class="meta">Pranshu Danani, Yash Bansal et al. - AAAI 2026 Student Abstract</div>
+            <p class="pub-desc">Targets tool-tissue-action triplet recognition in surgical video using temporal weak supervision, reducing dependence on dense frame-level labels.</p>
+            <div class="tag-row"><span class="tag">surgical AI</span><span class="tag">temporal learning</span><span class="tag">weak supervision</span></div>
+          </div>
+        </article>
+
+        <article class="pub-card">
+          <a class="pub-thumb" href="https://drive.google.com/file/d/1fDiYDcPjGdapSoGi3nkUm9RmteZjxBKi/view" target="_blank" rel="noopener">
+            <img src="assets/images/morphochannet.png" alt="Morphology feature fusion paper figure">
+          </a>
+          <div class="pub-body">
+            <h3 class="pub-title">Weighted ColorMorphology Feature Fusion for Tuberculosis Bacilli Detection from Cytopathology Images</h3>
+            <div class="meta">Yash Bansal et al. - ICVGIP 2025</div>
+            <p class="pub-desc">Medical-imaging classifier for TB bacilli using weighted color and morphology channels to improve sensitivity on noisy cytopathology smears.</p>
+            <div class="tag-row"><span class="tag">medical imaging</span><span class="tag">cytopathology</span><span class="tag">ICVGIP</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-head">
+        <h2>experience</h2>
+        <span class="section-code">where the code met reality</span>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-top">
+            <h3 class="title">Machine Learning Intern - Whyminds.ai</h3>
+            <span class="meta">Jun 2025 - Jul 2025</span>
+          </div>
+          <p class="body-copy">Built a CrewAI-based multi-agent pipeline for LinkedIn publishing: AI-news scraping, NER topic tagging, LLM drafting, activity logging, and scheduled content operations for 5+ posts per week.</p>
+          <p class="body-copy">Also shipped an OCR extraction pipeline with PaddleOCR and LayoutLMv3 for noisy PAN and tax documents, using regex normalization and confidence thresholds to clean field-level outputs.</p>
+          <div class="tag-row"><span class="tag">CrewAI</span><span class="tag">PaddleOCR</span><span class="tag">LayoutLMv3</span><span class="tag">NER</span></div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-top">
+            <h3 class="title">Medical Imaging Research - Parimal Lab</h3>
+            <span class="meta">ICVGIP 2025</span>
+          </div>
+          <p class="body-copy">Worked on cytopathology image analysis for acid-fast bacilli detection, designing a color-morphology feature fusion model around illumination, saturation, hue, and Sobel edge channels.</p>
+          <p class="body-copy">This line of work became the ICVGIP paper on TB bacilli detection, with channel attention, reconstruction-loss weighting, focal loss for false positives, and Grad-CAM interpretability.</p>
+          <div class="tag-row"><span class="tag">medical imaging</span><span class="tag">OpenCV</span><span class="tag">PyTorch</span><span class="tag">Grad-CAM</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-head">
+        <h2>stack / skills</h2>
+        <span class="section-code">honest inventory</span>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3>LLM systems and agents</h3>
+          <p>LangGraph, LangChain, CrewAI, OpenAI API, LiteLLM, vLLM, Groq, tool-use loops, typed tool contracts, review gates, memory, agent evaluation.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Retrieval and evaluation</h3>
+          <p>Qdrant, Pinecone, FAISS, LanceDB, SQLite FTS5, BM25, RRF, rerankers, RAGAS, NLI verification, source-bounded judging, faithfulness metrics.</p>
+        </article>
+        <article class="skill-card">
+          <h3>ML and computer vision</h3>
+          <p>PyTorch, Hugging Face Transformers, scikit-learn, OpenCV, EfficientNet, Grad-CAM, PaddleOCR, LayoutLMv3, medical imaging, satellite imagery.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Backend and MLOps</h3>
+          <p>FastAPI, Docker, Celery, Redis, Prometheus, MLflow, W&B, AWS, GCP, MySQL, MongoDB, CI-friendly eval harnesses.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Security-ish agent work</h3>
+          <p>Scoped permissions, audit trails, protected actions, placeholder private data, policy engines, denial matrices. Basically: let the model suggest, not steal the keys.</p>
+        </article>
+        <article class="skill-card">
+          <h3>Currently poking at</h3>
+          <p>Rust and TypeScript for agent infra / Web3 security builds. <span class="skill-note">Honest status: useful enough to ship small things, not pretending to be a compiler wizard.</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="section-head">
+        <h2>education</h2>
+        <span class="section-code">origin story, minus montage</span>
+      </div>
+      <article class="education-card">
+        <div class="project-year">IIT Roorkee<br>CGPA 8.27</div>
+        <div>
+          <h3 class="title">B.Tech. in Biosciences and Bioengineering</h3>
+          <p class="body-copy">Coursework and projects bridge biological systems, computer vision, and production ML engineering.</p>
         </div>
-        <div class="service-grid">
-          <article class="edu-card">
-            <h3 class="title">Indian Institute of Technology, Roorkee</h3>
-            <p>B.Tech. in Biosciences and Bioengineering, CGPA 8.27. Coursework and projects bridge biological systems, computer vision, and production ML engineering.</p>
-          </article>
-        </div>
-      </section>
-    </div>
+      </article>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© 2026 Yash Bansal</span>
-      <span>Built for GitHub Pages. Source: <a href="https://github.com/oyaah/oyaah.github.io" target="_blank" rel="noopener">oyaah/oyaah.github.io</a></span>
+  <footer id="contact" class="footer">
+    <div class="shell">
+      <div class="footer-inner">
+        <span>© 2026 Yash Bansal</span>
+        <span>source: <a href="https://github.com/oyaah/oyaah.github.io" target="_blank" rel="noopener">oyaah/oyaah.github.io</a></span>
+      </div>
+      <div class="ticker" aria-hidden="true">
+        <span>VISITORS :: probably human</span>
+        <span>MODEL_OUTPUT :: verify before trusting</span>
+        <span>STACK_TRACE :: clean enough</span>
+        <span>PIXELS :: behaving today</span>
+        <span>AGENT_STATUS :: supervised</span>
+        <span>VISITORS :: probably human</span>
+        <span>MODEL_OUTPUT :: verify before trusting</span>
+        <span>STACK_TRACE :: clean enough</span>
+        <span>PIXELS :: behaving today</span>
+        <span>AGENT_STATUS :: supervised</span>
+      </div>
     </div>
   </footer>
+
   <script>
     (function () {
       var button = document.querySelector(".theme-toggle");
@@ -944,11 +1033,11 @@
           button.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
         }
         if (metaTheme) {
-          metaTheme.setAttribute("content", isDark ? "#0e1512" : "#173b2f");
+          metaTheme.setAttribute("content", isDark ? "#050505" : "#f4f1e8");
         }
       }
 
-      setTheme(document.documentElement.dataset.theme || "light");
+      setTheme(document.documentElement.dataset.theme || "dark");
 
       if (button) {
         button.addEventListener("click", function () {
