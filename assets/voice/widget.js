@@ -84,7 +84,7 @@
     var head = el("div", "ttp-head");
     var copy = el("div");
     copy.appendChild(el("h2", "ttp-title", "ask yash"));
-    this.status = el("div", "ttp-status", "projects / papers / code");
+    this.status = el("div", "ttp-status", "ask or talk. no scrolling tax.");
     copy.appendChild(this.status);
     this.closeBtn = el("button", "ttp-close", "x");
     this.closeBtn.type = "button";
@@ -95,12 +95,12 @@
     this.log = el("div", "ttp-log");
     this.log.setAttribute("role", "log");
     this.log.setAttribute("aria-live", "polite");
-    this.addMessage("assistant", "Ask about the work. I’ll stick to the receipts.");
+    this.addMessage("assistant", "What's up. Ask away.");
 
     this.form = el("form", "ttp-form");
     this.input = el("input", "ttp-input");
     this.input.type = "text";
-    this.input.placeholder = "ask about a project or paper...";
+    this.input.placeholder = "ask about a project, paper, code...";
     this.input.autocomplete = "off";
     this.submit = el("button", "ttp-send", "ask");
     this.submit.type = "submit";
@@ -199,7 +199,7 @@
     if (!question) return;
     this.input.value = "";
     this.addMessage("user", question);
-    this.setStatus("checking sources...");
+    this.setStatus("checking receipts...");
     this.submit.disabled = true;
     try {
       var response = await fetch(HTTP_URL, {
@@ -212,7 +212,7 @@
       this.addMessage("assistant", data.answer || "No answer came back.", data);
       this.setStatus("ready");
     } catch (error) {
-      this.addMessage("assistant", "Backend is not live yet. Frontend showed up early; classic.");
+      this.addMessage("assistant", "Backend is not live yet. The wires are staged.");
       this.setStatus("offline");
     } finally {
       this.submit.disabled = false;
@@ -273,7 +273,7 @@
       this.btn.classList.add("ttp-live");
       this.setStatus("listening");
     } catch (error) {
-      this.setStatus("voice unavailable");
+      this.setStatus("voice not ready yet");
       this.stop();
     }
   };
