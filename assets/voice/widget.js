@@ -4,7 +4,7 @@
 
   var DEFAULT_BACKEND = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
     ? "ws://localhost:8000"
-    : "wss://api.yashbansal.xyz";
+    : "wss://yashbansal.fly.dev";
   var BACKEND = (window.TTP_BACKEND_URL || DEFAULT_BACKEND).replace(/\/$/, "");
   var WS_URL = BACKEND + "/ws/converse";
   var HTTP_URL = BACKEND.replace(/^ws:/, "http:").replace(/^wss:/, "https:") + "/chat";
@@ -95,7 +95,7 @@
     this.log = el("div", "ttp-log");
     this.log.setAttribute("role", "log");
     this.log.setAttribute("aria-live", "polite");
-    this.addMessage("assistant", "What's up. Ask away.");
+    this.addMessage("assistant", "Hi, I'm Yash. Ask away.");
 
     this.form = el("form", "ttp-form");
     this.input = el("input", "ttp-input");
