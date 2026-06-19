@@ -4,7 +4,7 @@
 
   var DEFAULT_BACKEND = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
     ? "ws://localhost:8000"
-    : "wss://yashbansal.fly.dev";
+    : "wss://api.yashbansal.xyz";
   var BACKEND = (window.TTP_BACKEND_URL || DEFAULT_BACKEND).replace(/\/$/, "");
   var WS_URL = BACKEND + "/ws/converse";
   var HTTP_URL = BACKEND.replace(/^ws:/, "http:").replace(/^wss:/, "https:") + "/chat";
@@ -175,19 +175,27 @@
     message.appendChild(el("div", "ttp-msg-text", text));
 
     if (meta && meta.sources && meta.sources.length) {
+      var evidence = el("details", "ttp-evidence");
+      var summary = el("summary", "ttp-evidence-label", "sources");
       var sources = el("div", "ttp-sources");
       meta.sources.slice(0, 4).forEach(function (source) {
         sources.appendChild(el("span", "ttp-source", source.section || source.source));
       });
-      message.appendChild(sources);
+      evidence.appendChild(summary);
+      evidence.appendChild(sources);
+      message.appendChild(evidence);
     }
 
     if (meta && meta.diagrams && meta.diagrams.length) {
+      var diagrams = el("details", "ttp-evidence");
+      diagrams.open = true;
+      diagrams.appendChild(el("summary", "ttp-evidence-label", "diagram"));
       meta.diagrams.slice(0, 2).forEach(function (diagram) {
         var pre = el("pre", "ttp-diagram");
-        pre.textContent = "```mermaid\n" + diagram + "\n```";
-        message.appendChild(pre);
+        pre.textContent = diagram;
+        diagrams.appendChild(pre);
       });
+      message.appendChild(diagrams);
     }
 
     this.log.appendChild(message);

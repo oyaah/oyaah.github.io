@@ -191,10 +191,22 @@
   color: var(--ink, #f3f0e8);
 }
 
+.ttp-evidence {
+  max-width: 100%;
+  color: var(--muted, #8b887f);
+  font-size: 11px;
+}
+
+.ttp-evidence-label {
+  cursor: pointer;
+  user-select: none;
+}
+
 .ttp-sources {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  padding-top: 7px;
 }
 
 .ttp-source {
@@ -213,7 +225,7 @@
 .ttp-diagram {
   max-width: 100%;
   overflow: auto;
-  margin: 0;
+  margin: 7px 0 0;
   border: 1px solid var(--line, #242424);
   background: var(--soft, #141414);
   color: var(--accent-2, #8eb7ff);
