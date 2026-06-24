@@ -75,7 +75,7 @@
   top: 76px;
   right: max(18px, env(safe-area-inset-right));
   bottom: max(18px, env(safe-area-inset-bottom));
-  width: min(390px, calc(100vw - 36px));
+  width: min(520px, calc(100vw - 36px));
   border: 1px solid var(--line, #242424);
   background: var(--panel, #0b0b0b);
   box-shadow: 0 24px 90px rgba(0, 0, 0, 0.52);
@@ -167,6 +167,10 @@
   justify-self: end;
 }
 
+.ttp-assistant {
+  max-width: 100%;
+}
+
 .ttp-msg-role {
   color: var(--muted, #8b887f);
   font-size: 11px;
@@ -183,6 +187,105 @@
   line-height: 1.45;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+}
+
+.ttp-rich-text {
+  display: grid;
+  gap: 10px;
+  white-space: normal;
+}
+
+.ttp-rich-text p,
+.ttp-rich-text ul,
+.ttp-rich-text h3,
+.ttp-rich-text h4 {
+  margin: 0;
+}
+
+.ttp-rich-text > p:first-child {
+  color: var(--ink, #f3f0e8);
+  font-size: 15px;
+}
+
+.ttp-rich-text strong {
+  color: var(--ink, #f3f0e8);
+  font-weight: 750;
+}
+
+.ttp-rich-text code {
+  border: 1px solid var(--line, #242424);
+  background: var(--panel, #0b0b0b);
+  color: var(--accent-2, #8eb7ff);
+  padding: 1px 4px;
+  font-family: inherit;
+  font-size: 0.9em;
+}
+
+.ttp-rich-text a {
+  color: var(--accent-2, #8eb7ff);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ttp-answer-heading {
+  padding-top: 2px;
+  color: var(--accent, #f0a178);
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.ttp-answer-fact {
+  display: grid;
+  gap: 5px;
+  border-left: 2px solid var(--line, #242424);
+  padding: 2px 0 2px 10px;
+}
+
+.ttp-answer-fact--proof {
+  border-left-color: var(--accent, #f0a178);
+  background: color-mix(in srgb, var(--accent, #f0a178) 7%, transparent);
+  padding: 9px 10px;
+}
+
+.ttp-answer-label {
+  color: var(--accent, #f0a178);
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 850;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.ttp-answer-fact p {
+  line-height: 1.48;
+}
+
+.ttp-answer-list {
+  display: grid;
+  gap: 4px;
+  padding: 1px 0 0 17px;
+}
+
+.ttp-answer-list li::marker {
+  color: var(--accent-2, #8eb7ff);
+}
+
+.ttp-answer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ttp-answer-tag {
+  border: 1px solid var(--line, #242424);
+  background: var(--panel, #0b0b0b);
+  color: var(--copy, #d4d0c7);
+  padding: 3px 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  line-height: 1.35;
 }
 
 .ttp-user .ttp-msg-text {

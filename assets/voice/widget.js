@@ -30,6 +30,119 @@
     return node;
   }
 
+  function appendInline(parent, text) {
+    var pattern = /(\*\*[^*]+\*\*|`[^`]+`|\[[^\]]+\]\(https?:\/\/[^\s)]+\))/g;
+    var cursor = 0;
+    var match;
+
+    while ((match = pattern.exec(text)) !== null) {
+      if (match.index > cursor) parent.appendChild(document.createTextNode(text.slice(cursor, match.index)));
+      var token = match[0];
+      if (token.slice(0, 2) === "**") {
+        parent.appendChild(el("strong", null, token.slice(2, -2)));
+      } else if (token.charAt(0) === "`") {
+        parent.appendChild(el("code", null, token.slice(1, -1)));
+      } else {
+        var linkMatch = token.match(/^\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)$/);
+        var link = el("a", null, linkMatch[1]);
+        link.href = linkMatch[2];
+        link.target = "_blank";
+        link.rel = "noreferrer noopener";
+        parent.appendChild(link);
+      }
+      cursor = pattern.lastIndex;
+    }
+
+    if (cursor < text.length) parent.appendChild(document.createTextNode(text.slice(cursor)));
+  }
+
+  function textBlock(tag, cls, text) {
+    var node = el(tag, cls);
+    appendInline(node, text);
+    return node;
+  }
+
+  function appendTags(parent, value) {
+    var tags = el("div", "ttp-answer-tags");
+    value.replace(/\.$/, "").split(",").forEach(function (item) {
+      var clean = item.trim();
+      if (clean) tags.appendChild(el("span", "ttp-answer-tag", clean));
+    });
+    parent.appendChild(tags);
+  }
+
+  function renderAnswer(text) {
+    var root = el("div", "ttp-msg-text ttp-rich-text");
+    var lines = String(text || "").replace(/\r/g, "").split("\n");
+    var paragraph = [];
+    var activeSection = null;
+    var activeList = null;
+
+    function flushParagraph() {
+      if (!paragraph.length) return;
+      root.appendChild(textBlock("p", null, paragraph.join(" ")));
+      paragraph = [];
+    }
+
+    function closeBlocks() {
+      activeSection = null;
+      activeList = null;
+    }
+
+    lines.forEach(function (rawLine) {
+      var line = rawLine.trim();
+      if (!line) {
+        flushParagraph();
+        closeBlocks();
+        return;
+      }
+
+      var heading = line.match(/^#{1,3}\s+(.+)$/);
+      if (heading) {
+        flushParagraph();
+        closeBlocks();
+        root.appendChild(textBlock("h3", "ttp-answer-heading", heading[1]));
+        return;
+      }
+
+      var labeledBullet = rawLine.match(/^[-*]\s+\*\*([^*]+)\*\*:\s*(.*)$/);
+      if (labeledBullet) {
+        flushParagraph();
+        var label = labeledBullet[1].trim();
+        var value = labeledBullet[2].trim();
+        activeSection = el("section", "ttp-answer-fact");
+        activeSection.appendChild(el("h4", "ttp-answer-label", label));
+        if (/metrics|results|impact/i.test(label)) activeSection.classList.add("ttp-answer-fact--proof");
+        if (/tech stack|technologies|stack|tools/i.test(label) && value.indexOf(",") !== -1) {
+          appendTags(activeSection, value);
+        } else if (value) {
+          activeSection.appendChild(textBlock("p", null, value));
+        }
+        root.appendChild(activeSection);
+        activeList = null;
+        return;
+      }
+
+      var bullet = rawLine.match(/^\s*[-*]\s+(.+)$/);
+      if (bullet) {
+        flushParagraph();
+        var listParent = activeSection || root;
+        if (!activeList || activeList.parentNode !== listParent) {
+          activeList = el("ul", "ttp-answer-list");
+          listParent.appendChild(activeList);
+        }
+        activeList.appendChild(textBlock("li", null, bullet[1].trim()));
+        return;
+      }
+
+      closeBlocks();
+      paragraph.push(line);
+    });
+
+    flushParagraph();
+    return root;
+  }
+
   function rms(int16) {
     var sum = 0;
     for (var i = 0; i < int16.length; i += 1) {
@@ -172,7 +285,7 @@
   Widget.prototype.addMessage = function (role, text, meta) {
     var message = el("article", "ttp-msg ttp-" + role);
     message.appendChild(el("div", "ttp-msg-role", role === "user" ? "you" : "answer"));
-    message.appendChild(el("div", "ttp-msg-text", text));
+    message.appendChild(role === "assistant" ? renderAnswer(text) : el("div", "ttp-msg-text", text));
 
     if (meta && meta.sources && meta.sources.length) {
       var evidence = el("details", "ttp-evidence");
